@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../IMG/favicon.ico"/>
+    <link rel="stylesheet" href="../CSS/style.css">
+
+</head>
+<body>
+     <header class="header">
+  <!-- Botón toggle para mostrar/ocultar el menú -->
+  <input type="checkbox" id="header__toggle" class="header__checkbox" hidden />
+  <label for="header__toggle" class="header__toggle-button">☰</label>
+
+  <!-- Menú de navegación lateral -->
+  <nav class="header__menu">
+    <img src="../IMG/LOGO.png" alt="Logo Salud Virtual" class="header__logo" />
+
+    <a href="../index.html" class="header__link"><button class="header__button">Inicio</button></a>
+    <a href="../paginas/pacientes.html" class="header__link"><button class="header__button">Pacientes</button></a>
+    <a href="../paginas/tutores.html" class="header__link"><button class="header__button">Tutores</button></a>
+    <a href="../paginas/historialmedico.html" class="header__link"><button class="header__button">Historial Médico</button></a>
+    <a href="../paginas/registrotutor.html" class="header__link"><button class="header__button">Registrar Tutor</button></a>
+    <a href="../paginas/registrarpacientes.html" class="header__link"><button class="header__button">Registrar Paciente</button></a>
+    <a href="../paginas/agendarcitas.html" class="header__link"><button class="header__button">Agendar Cita Médica</button></a>
+    <a href="../paginas/agregarhistorial.html" class="header__link"><button class="header__button">Agregar Historial Médico</button></a>
+    <a href="../paginas/Dasboard.html" class="header__link"><button class="header__button">Dashboard</button></a>
+  </nav>
+</header>
+    
+    
+    <main>
+
+      <div class="tabla">
+  <h1 class="tabla__titulo">
+    <img src="../IMG/pediatric.png" alt="icono registrados" class="tabla__icono">Pacientes Registrados
+  </h1>
+  <table class="tabla__estructura" id="tablaPacientes">
+    <thead class="tabla__cabecera">
+      <tr class="tabla__fila">
+        <th class="tabla__encabezado">Código</th>
+        <th class="tabla__encabezado">Primer Nombre</th>
+        <th class="tabla__encabezado">Segundo Nombre</th>
+        <th class="tabla__encabezado">Apellidos</th>
+        <th class="tabla__encabezado">Fecha Nacimiento</th>
+        <th class="tabla__encabezado">Edad</th>
+        <th class="tabla__encabezado">Sexo</th>
+        <th class="tabla__encabezado">Alergias</th>
+        <th class="tabla__encabezado">Editar</th>
+        <th class="tabla__encabezado">Eliminar</th>
+      </tr>
+    </thead>
+    <tbody class="tabla__cuerpo">
+    </tbody>
+  </table>
+</div>
+
+
+    </main>
+    
+   
+    
+<footer class="footer-contacto">
+  <div class="footer-contacto__row">
+    <div class="footer-contacto__section footer-contacto__section--info">
+      <h3 class="footer-contacto__heading">Contactos del Hospital Pediátrico</h3>
+      <p class="footer-contacto__text">| <strong>Teléfono</strong>: +505 2426 4890</p>
+      <p class="footer-contacto__text">| <strong>E-mail</strong>: hospitalpediatricopequeñosheroes@emp.com</p>
+      <p class="footer-contacto__text">| <strong>Dirección</strong>: De la farmacia Santa Rita, 3C al este, Masaya, Reparto la Reforma.</p>
+    </div>
+    <div class="footer-contacto__section footer-contacto__section--logo">
+      <img src="../IMG/SV.jpg" alt="Logo Salud Virtual" class="footer-contacto__logo">
+    </div>
+  </div>
+
+  <div class="footer-contacto__divider"></div>
+
+  <div class="footer-contacto__social">
+    <a href="#"><img src="../IMG/Facebook.png" alt="Facebook" class="footer-contacto__social-icon"></a>
+    <a href="#"><img src="../IMG/whatsapp.png" alt="WhatsApp" class="footer-contacto__social-icon"></a>
+    <a href="#"><img src="../IMG/Instagram.png" alt="Instagram" class="footer-contacto__social-icon"></a>
+  </div>
+
+  <div class="footer-contacto__bottom">
+    <p class="footer-contacto__copy">&copy; 2025 Hospital Pediátrico - Pequeños Héroes - Salud Virtual. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+      
+</body>
+<script src="../JS/scripts.js"></script>
+
+</html>

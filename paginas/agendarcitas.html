@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios Médicos</title>
+    <link rel="icon" type="image/x-icon" href="../IMG/favicon.ico"/>
+    <link rel="stylesheet" href="../CSS/style.css">
+</head>
+<body>
+  <header class="header">
+  <!-- Botón toggle para mostrar/ocultar el menú -->
+  <input type="checkbox" id="header__toggle" class="header__checkbox" hidden />
+  <label for="header__toggle" class="header__toggle-button">☰</label>
+
+  <!-- Menú de navegación lateral -->
+  <nav class="header__menu">
+    <img src="../IMG/LOGO.png" alt="Logo Salud Virtual" class="header__logo" />
+
+    <a href="../index.html" class="header__link"><button class="header__button">Inicio</button></a>
+    <a href="../paginas/pacientes.html" class="header__link"><button class="header__button">Pacientes</button></a>
+    <a href="../paginas/tutores.html" class="header__link"><button class="header__button">Tutores</button></a>
+    <a href="../paginas/historialmedico.html" class="header__link"><button class="header__button">Historial Médico</button></a>
+    <a href="../paginas/registrotutor.html" class="header__link"><button class="header__button">Registrar Tutor</button></a>
+    <a href="../paginas/registrarpacientes.html" class="header__link"><button class="header__button">Registrar Paciente</button></a>
+    <a href="../paginas/agendarcitas.html" class="header__link"><button class="header__button">Agendar Cita Médica</button></a>
+    <a href="../paginas/agregarhistorial.html" class="header__link"><button class="header__button">Agregar Historial Médico</button></a>
+    <a href="../paginas/Dasboard.html" class="header__link"><button class="header__button">Dashboard</button></a>
+  </nav>
+</header>
+  
+    <main>
+
+ <div class="formulario">
+  <h1 class="formulario__titulo">
+    <img src="../IMG/Calendario.png" alt="Ícono de cita" class="formulario__icono">
+    Agendar Cita Médica
+  </h1>
+  <form id="citaForm">
+    <div class="formulario__grid">
+      <div class="formulario__columna">
+        <label for="codigoCita" class="formulario__label">Código de Cita</label>
+        <input type="text" id="codigoCita" name="codigoCita" class="formulario__input" placeholder="Código de cita" readonly style="background-color: #e0e0e0;">
+
+        <label for="1nombre-tutor" class="formulario__label">Primer Nombre del Tutor</label>
+        <input type="text" id="1nombre-tutor" name="1nombre-tutor" class="formulario__input" placeholder="Primer Nombre del Tutor" required>
+
+        <label for="2nombre-tutor" class="formulario__label">Segundo Nombre del Tutor</label>
+        <input type="text" id="2nombre-tutor" name="2nombre-tutor" class="formulario__input" placeholder="Segundo Nombre del Tutor">
+
+        <label for="apellidos-tutor" class="formulario__label">Apellidos del Tutor</label>
+        <input type="text" id="apellidos-tutor" name="apellidos-tutor" class="formulario__input" placeholder="Apellidos del Tutor">
+
+        <label for="1nombre-paciente" class="formulario__label">Primer Nombre del Paciente</label>
+        <input type="text" id="1nombre-paciente" name="1nombre-paciente" class="formulario__input" placeholder="Primer Nombre del Paciente" required>
+
+        <label for="2nombre-paciente" class="formulario__label">Segundo Nombre del Paciente</label>
+        <input type="text" id="2nombre-paciente" name="2nombre-paciente" class="formulario__input" placeholder="Segundo Nombre del Paciente">
+      </div>
+
+      <div class="formulario__columna">
+        <label for="apellidos-paciente" class="formulario__label">Apellidos del Paciente</label>
+        <input type="text" id="apellidos-paciente" name="apellidos-paciente" class="formulario__input" placeholder="Apellidos del Paciente">
+
+        <label for="razon" class="formulario__label">Razón/Motivo Cita</label>
+        <input type="text" id="razon" name="razon" class="formulario__input" placeholder="Motivo de la cita" required>
+
+        <label for="fecha" class="formulario__label">Fecha de Cita</label>
+        <input type="date" id="fecha" name="fecha" class="formulario__input" required>
+
+        <label for="personal-medico" class="formulario__label">Médico/Doctor</label>
+        <select id="personal-medico" name="personal-medico" class="formulario__select" required>
+          <option value="">Seleccionar</option>
+          <option value="Dra.Maria del Carmen Calero Cano">Dra. Maria del Carmen Calero Cano</option>
+          <option value="Dr.Carlos Daniel Gutierrez Morales">Dr. Carlos Daniel Gutierrez Morales</option>
+        </select>
+
+        <label for="estado" class="formulario__label">Estado de Cita</label>
+        <select id="estado" name="estado" class="formulario__select" required>
+          <option value="">Seleccionar</option>
+          <option value="Cancelado">Cancelado</option>
+          <option value="Confirmado">Confirmado</option>
+        </select>
+
+        <label for="hora" class="formulario__label">Hora</label>
+        <input type="time" id="hora" name="hora" class="formulario__input" required>
+      </div>
+    </div>
+
+    <div class="formulario__botones">
+      <button type="submit" class="formulario__boton">Guardar Cita</button>
+    </div>
+  </form>
+</div>
+
+  
+    </main>
+  
+    
+<footer class="footer-contacto">
+  <div class="footer-contacto__row">
+    <div class="footer-contacto__section footer-contacto__section--info">
+      <h3 class="footer-contacto__heading">Contactos del Hospital Pediátrico</h3>
+      <p class="footer-contacto__text">| <strong>Teléfono</strong>: +505 2426 4890</p>
+      <p class="footer-contacto__text">| <strong>E-mail</strong>: hospitalpediatricopequeñosheroes@emp.com</p>
+      <p class="footer-contacto__text">| <strong>Dirección</strong>: De la farmacia Santa Rita, 3C al este, Masaya, Reparto la Reforma.</p>
+    </div>
+    <div class="footer-contacto__section footer-contacto__section--logo">
+      <img src="../IMG/SV.jpg" alt="Logo Salud Virtual" class="footer-contacto__logo">
+    </div>
+  </div>
+
+  <div class="footer-contacto__divider"></div>
+
+  <div class="footer-contacto__social">
+    <a href="#"><img src="../IMG/Facebook.png" alt="Facebook" class="footer-contacto__social-icon"></a>
+    <a href="#"><img src="../IMG/whatsapp.png" alt="WhatsApp" class="footer-contacto__social-icon"></a>
+    <a href="#"><img src="../IMG/Instagram.png" alt="Instagram" class="footer-contacto__social-icon"></a>
+  </div>
+
+  <div class="footer-contacto__bottom">
+    <p class="footer-contacto__copy">&copy; 2025 Hospital Pediátrico - Pequeños Héroes - Salud Virtual. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+    
+</body>
+</html>

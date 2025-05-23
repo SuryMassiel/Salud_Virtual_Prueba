@@ -1,0 +1,791 @@
+/*================== CONTENEDOR PRINCIPAL ==================*/
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  margin-bottom: auto;
+  padding: 0;
+  background-color: #f0f8ff;
+}
+/*================== BOTÓN HAMBURGUESA ==================*/
+.header__toggle-button {
+  position: fixed;
+  top: 15px;
+  left: 5px;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 1001;
+  background-color: #ffffff;
+  padding: 8px 12px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: left 0.3s ease;
+}
+
+/* Checkbox oculto */
+.header__checkbox {
+  display: none;
+}
+
+/*================== MENÚ LATERAL ==================*/
+.header__menu {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: -300px;
+  top: 0;
+  height: 100%;
+  width: 190px;
+  background-color: #ffffff;
+  padding: 10px;
+  gap: 10px;
+  transition: left 0.3s ease;
+  z-index: 1000;
+}
+
+/* Mostrar menú al activar checkbox */
+.header__checkbox:checked ~ .header__menu {
+  left: 0;
+}
+
+/* Mover botón toggle con el menú abierto */
+.header__checkbox:checked ~ .header__toggle-button {
+  left: 210px;
+}
+
+/*================== BOTONES DE NAVEGACIÓN ==================*/
+.header__button {
+  font-size: 14px;
+  color: rgb(32, 43, 39);
+  font-weight: bold;
+  padding: 10px;
+  background: transparent;
+  text-align: left;
+  width: 100%;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.header__button:hover {
+  background-color: #c1c1c1;
+  color: #104b49;
+}
+
+/*================== LOGO ==================*/
+.header__logo {
+  width: 80px;
+  height: 80px;
+  text-align: left;
+  margin: 0;
+  border-radius: 80%;
+  border: 3px solid #ffffff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+/*======================================================CULMINACION DEL MENÚ CON BEM======================================================*/
+
+
+
+/*==================PANTALLA DE INICIO CON BEM==================*/
+.inicio {
+  padding: 20px;
+}
+
+.inicio__contenedor {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.inicio__texto {
+  max-width: 60%;
+}
+
+.inicio__titulo {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.inicio__descripcion {
+  font-size: 16px;
+  color: #333;
+}
+
+.inicio__imagen {
+  max-width: 550px;
+  height: auto;
+  border-radius: 7%;
+  border: 1px solid #097051;
+}
+
+/* === RESPONSIVE PARA TABLETS Y CELULARES USO DE BEM ================ */
+@media (max-width: 768px) {
+  .inicio__contenedor {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .inicio__texto {
+    max-width: 100%;
+  }
+
+  .inicio__titulo {
+    font-size: 20px;
+  }
+
+  .inicio__descripcion {
+    font-size: 14px;
+  }
+
+  .inicio__imagen {
+    max-width: 90%;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .inicio__titulo {
+    font-size: 18px;
+  }
+
+  .inicio__descripcion {
+    font-size: 13px;
+  }
+}
+
+/*==================METODOLOGIA BEM INTEGRADA EN LAS TABLAS DE MANERA GENERAL=====================*/
+.tabla {
+  max-width: 1100px;
+  margin: 20px auto;
+  padding: 0 10px;
+  overflow-x: auto; /* importante para responsividad */
+}
+
+/* Título de la tabla */
+.tabla__titulo {
+  color: #333;
+  text-align: center;
+  font-size: 1.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tabla__icono {
+  width: 20px;
+  height: 20px;
+  margin-right: 12px;
+}
+
+/* Estructura de tabla */
+.tabla__estructura {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.tabla__cabecera {
+  background: none;
+}
+
+.tabla__encabezado {
+  background-color: #1d5154;
+  color: white;
+  font-size: 14px;
+  padding: 14px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+.tabla__cuerpo {
+  background: #ffffff;
+  font-size: 14px;
+}
+
+.tabla__fila {
+  transition: background-color 0.3s;
+}
+
+.tabla__fila--vacia {
+  height: 0px;
+}
+
+/* Celdas comunes */
+.tabla__estructura td {
+  font-size: 12px;
+  padding: 2px 8px;
+  border: 1px solid #ddd;
+  max-width: 4px;
+  word-wrap: break-word;
+}
+
+/* Botones */
+.btn-delete {
+  background-color: #c52c24;
+  color: white;
+  border: none;
+  padding: 6px 6px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.editar-btn {
+  background-color: #168771;
+  color: white;
+  border: none;
+  padding: 6px 6px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.editar-btn:hover {
+  background-color: #709683;
+  transform: scale(1.05);
+}
+
+.btn-delete:hover {
+  background-color: #9b6e60;
+  transform: scale(1.05);
+}
+
+.editar-btn:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .tabla__titulo {
+    font-size: 1.2em;
+  }
+
+  .tabla__estructura {
+    display: block;
+    overflow-x: auto;
+    font-size: 12px;
+  }
+
+  .tabla__estructura th,
+  .tabla__estructura td {
+    padding: 4px;
+    max-width: 80px;
+  }
+}
+/*=========================ACA TERMINA EL DISEÑO DE LAS TABLAS CON LA METODOLGIA BEM=================== */
+
+
+/*================= INICIO DE FOOTER ("ya tiene BEM")  ==================*/
+.footer-contacto {
+  display: flex;
+  flex-direction: column;
+  background-color: #105f55;
+  color: white;
+  padding: 10px;
+  font-size: 13px;
+}
+
+/* Estructura principal */
+.footer-contacto__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.footer-contacto__section {
+  flex: 1;
+  margin: 6px;
+}
+
+.footer-contacto__section--info {
+  text-align: left;
+}
+
+.footer-contacto__section--logo {
+  text-align: center;
+}
+
+.footer-contacto__heading {
+  margin-bottom: 8px;
+}
+
+.footer-contacto__text {
+  margin: 4px 0;
+  color: white;
+}
+ 
+.footer-contacto__logo {
+  width: 70px;
+  border-radius: 80%; /*hace deforma circular la imagen (originalmente es cuadrada)*/
+  border: 3px solid #ffffff;
+}
+
+/* Línea divisoria */
+.footer-contacto__divider {
+  height: 2px;
+  background-color: white;
+  margin: 10px 0;
+}
+
+/* Redes sociales */
+.footer-contacto__social {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 8px;
+}
+
+.footer-contacto__social-icon {
+  width: 30px;
+  height: auto;
+}
+
+/* Pie inferior */
+.footer-contacto__bottom {
+  text-align: center;
+  padding: 10px 0;
+}
+
+.footer-contacto__copy {
+  color: #ffffff;
+  font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-contacto__row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-contacto__section--info {
+    text-align: center;
+  }
+
+  .footer-contacto__section {
+    margin: 10px 0;
+    width: 100%;
+  }
+}
+/*====================================AQUI TERMINA EL FOOTER CON BEM====================================*/
+
+
+/* === Información de los contenedores de MISION VISION, VALORES Y SERVICIOS===*/
+
+.info {
+  margin: 10px 20px;
+}
+
+/* Título de sección */
+.info__section-title {
+  font-size: 2.2em;
+  font-weight: bold;
+  color: #007b83;
+  text-align: center;
+  margin-top: 60px;
+  margin-bottom: 30px;
+  position: relative;
+  border-bottom: 4px solid #00bfa6;
+  
+}
+
+.info__icon {
+  width: 24px;
+  height: auto;
+  margin-right: 4px;
+  vertical-align: middle;
+}
+
+/* Contenedor para Misión, Visión y Valores */
+.info__cards {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: stretch;
+}
+
+/* Tarjetas */
+.info__card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  flex: 0 1 calc(33.333% - 20px);
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100%;  
+
+  box-sizing: border-box;
+  transition: transform 0.3s;
+}
+
+.info__card:hover {
+  transform: translateY(-5px);
+}
+
+/* por si le quiero dar un estilo unico.
+.info__card--valores {
+  background-color: #ffffff;
+}
+*/
+
+.info__card-title {
+  text-align: center;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.info__card-text {
+  color: #555;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Listas (valores y servicios) */
+.info__list {
+  list-style-type: disc;
+  padding-left: 20px;
+  text-align: left;
+}
+
+.info__item {
+  margin-bottom: 8px;
+  color: #555;
+}
+
+.info__item strong {
+  color: #165756;
+}
+
+/* Grid de servicios */
+.info__grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+@media (max-width: 900px) {
+  .info__card {
+    flex: 0 1 calc(50% - 20px); /* 2 columnas */
+  }
+}
+
+@media (max-width: 600px) {
+  .info__card {
+    flex: 0 1 100%; /* 1 columna */
+  }
+}
+
+/*====================================AQUI TERMINA LOS DE INICIO====================================*/
+
+
+
+/* ====================== FORMULARIOS CON METODOLOGIA  BEM ======================== */
+.formulario {
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 1000px;
+  margin: 30px auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.formulario__titulo {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #313f4d;
+  text-align: center;
+  margin: 10px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.formulario__icono {
+  width: 30px;
+  height: auto;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+.formulario__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.formulario__columna {
+  display: flex;
+  flex-direction: column;
+}
+
+.formulario__label {
+  margin-top: 12px;
+  font-weight: 500;
+  color: #333;
+}
+
+.formulario__input,
+.formulario__select {
+  padding: 10px;
+  margin-top: 6px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  transition: border-color 0.3s;
+}
+
+.formulario__input:focus,
+.formulario__select:focus {
+  outline: none;
+  border-color: #3ca6ff;
+}
+
+.formulario__botones {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.formulario__boton {
+  background-color: #d9f0ec;
+  color: rgb(16, 66, 41);
+  font-weight: bolder;
+  border: none;
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.formulario__boton:hover {
+  background-color: #7a7e7e;
+  color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .formulario__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .formulario__titulo {
+    flex-direction: column;
+  }
+
+  .formulario__icono {
+    margin-bottom: 10px;
+  }
+}
+/*=====================FIN DE FORMULARIOS CON METODOLOGIA BEM====================*/
+
+
+
+
+
+
+
+
+/*====================================AQUI EMPIZA EL CSS DE DASBOARD====================================*/
+
+
+
+.page {
+  background-color: #f5f8fc;
+  padding: 20px;
+}
+
+.dashboard {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 40px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.dashboard__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.dashboard__title {
+  font-size: 28px;
+  color: #1a1a1a;
+}
+
+.dashboard__header-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dashboard__badge {
+  background-color: #edf2f7;
+  padding: 5px 10px;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.dashboard__logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.dashboard__controls {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+
+
+.dashboard__btn:hover {
+  background-color: #1a5acb;
+}
+
+.summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.summary__card {
+  background-color: #e9f2fb;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.05);
+}
+
+.summary__label {
+  font-size: 14px;
+  color: #555;
+}
+
+.summary__value {
+  font-size: 26px;
+  color: #2c7be5;
+}
+
+.charts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.charts__box {
+  flex: 1;
+  min-width: 300px;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+}
+
+.charts__header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.charts__title {
+  font-size: 18px;
+  color: #1a1a1a;
+}
+
+.details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.details__box {
+  flex: 1;
+  min-width: 280px;
+  background-color: #f7faff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+}
+
+.details__header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.details__title {
+  font-size: 16px;
+  color: #333;
+}
+
+.details__list {
+  list-style: none;
+}
+
+.details__item {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 0;
+  font-size: 14px;
+  color: #444;
+}
+
+.distribution {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.distribution__title {
+  font-size: 22px;
+  color: #1a1a1a;
+  margin-bottom: 20px;
+}
+
+.distribution__pair {
+  display: flex;
+  justify-content: center;
+  gap: 150px;
+  flex-wrap: wrap;
+}
+
+.distribution__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 300px;
+}
+
+.distribution__label {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.distribution__chart {
+  max-width: 280px;
+  max-height: 280px;
+}
