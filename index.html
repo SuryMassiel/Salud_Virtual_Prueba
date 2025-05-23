@@ -1,180 +1,254 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Salud Virtual</title>
-  <link rel="icon" type="image/x-icon" href="./IMG/favicon.ico"/>
-  <link rel="stylesheet" href="./CSS/style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salud Virtual</title>
+    <link rel="icon" type="image/x-icon" href="./IMG/logo.png"/>
+    <link rel="stylesheet" href="./CSS/style.css">
+    <link rel="stylesheet" href="./CSS/normalize.css">
 </head>
 <body>
-   <header class="header">
-  <!-- Botón toggle para mostrar/ocultar el menú -->
-  <input type="checkbox" id="header__toggle" class="header__checkbox" hidden />
-  <label for="header__toggle" class="header__toggle-button">☰</label>
 
-  <!-- Menú de navegación lateral -->
-  <nav class="header__menu">
-    <img src="./IMG/LOGO.png" alt="Logo Salud Virtual" class="header__logo" />
+    <header class="hero">
+        <nav class="nav container">
+            <div class="nav__logo">
+                <img src="./IMG/logo.png" alt="Logo Salud Virtual" class="logo-icon">
+                <h2 class="nav__title">Salud Virtual</h2>
+            </div>
 
-    <a href="./index.html" class="header__link"><button class="header__button">Inicio</button></a>
-    <a href="./paginas/pacientes.html" class="header__link"><button class="header__button">Pacientes</button></a>
-    <a href="./paginas/tutores.html" class="header__link"><button class="header__button">Tutores</button></a>
-    <a href="./paginas/historialmedico.html" class="header__link"><button class="header__button">Historial Médico</button></a>
-    <a href="./paginas/registrotutor.html" class="header__link"><button class="header__button">Registrar Tutor</button></a>
-    <a href="./paginas/registrarpacientes.html" class="header__link"><button class="header__button">Registrar Paciente</button></a>
-    <a href="./paginas/agendarcitas.html" class="header__link"><button class="header__button">Agendar Cita Médica</button></a>
-    <a href="./paginas/agregarhistorial.html" class="header__link"><button class="header__button">Agregar Historial Médico</button></a>
-    <a href="./paginas/Dasboard.html" class="header__link"><button class="header__button">Dashboard</button></a>
-  </nav>
-</header>
+            <ul class="nav__link nav__link--menu">
+                <li class="nav__items">
+                    <a href="#inicio" class="nav__links">Inicio</a>
+                </li>
+                <li class="nav__items">
+                    <a href="#servicios" class="nav__links">Servicios</a>
+                </li>
+                <li class="nav__items">
+                    <a href="#acerca de" class="nav__links">Acerca de</a>
+                </li>
+                <li class="nav__items">
+                    <a href="#contacto" class="nav__links">Contacto</a>
+                </li>
+                <li class="nav__items">
+                    <a href="#blog" class="nav__links">Blog</a>
+                </li>
 
-  <main>
-    <!-- Sección Inicio -->
-    <div id="inicio" class="inicio">
+                <img src="./IMG/close.png" class="nav__close">
+            </ul>
 
-      <div class="inicio__contenedor">
-        <div class="inicio__texto">
-          <h2 class="inicio__titulo">Bienvenido al Hospital <br>Pediátrico Pequeños Héroes</h2>
-          <p class="inicio__descripcion">La mejor atención para los más pequeños.</p>
+            <div class="nav__menu">
+                <img src="./IMG/menu.png" class="nav__img">
+            </div>
+        </nav>
+
+        <section class="hero__container container">
+            <h1 class="hero__title">Agenda la cita médica para tus pequeños.</h1>
+            <p class="hero__paragraph">Bienvenido a Salud Virtual, un sistema para programar la cita de tus pequeños.</p>
+        </section>
+    </header>
+
+    <main>
+        <section id="inicio" class="container about">
+            <h2 class="subtitle">Información Oficial de la Institución</h2>
+            <p class="about__paragraph">"... Que todos los niños que nazcan en nuestro país tengan exactamente 
+                las mismas posibilidades, que todos aprendan por igual, a partir de las capacidades que en ellos 
+                se desarrollen...'' (Fidel Castro Ruz).</p>
+
+            <div class="info">
+                <div class="info__cards">
+                    <div class="info__card info__card--mision">
+                        <h3 class="info__card-title"><img src="./IMG/Mision.png" alt="Misión" class="info__icon">Misión</h3>
+                        <p class="info__card-text">Brindar atención pediátrica de alta calidad, enfocados en la seguridad de nuestros pacientes, ofreciendo una atención médica integral por el mejor equipo de profesionales que conducen con ética, humanismo y excelencia.</p>
+                    </div>
+
+                    <div class="info__card info__card--vision">
+                        <h3 class="info__card-title"><img src="./IMG/Vision.png" alt="Visión" class="info__icon">Visión</h3>
+                        <p class="info__card-text">Ser el hospital líder en la atención médica pediátrica, que brinde la mejor experiencia hospitalaria en el departamento, impulsando y mejorando un modelo de asistencial privado.</p>
+                    </div>
+
+                    <div class="info__card info__card--valores">
+                        <h3 class="info__card-title"><img src="./IMG/valores.png" alt="Valores" class="info__icon">Valores</h3>
+                        <ul>
+                            <li class="info__item"><strong>Respeto:</strong> Trato amable y honesto hacia pacientes y compañeros.</li>
+                            <li class="info__item"><strong>Seguridad:</strong> Minimización de riesgos y protección de pacientes.</li>
+                            <li class="info__item"><strong>Compromiso:</strong> Prioridad en la salud y bienestar de los niños.</li>
+                            <li class="info__item"><strong>Empatía:</strong> Comprensión de las emociones de niños y familias.</li>
+                            <li class="info__item"><strong>Innovación:</strong> Búsqueda constante de mejoras y resultados creativos.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="servicios" class="container about">
+            <h2 class="subtitle">Servicios Oficiales de la Institución</h2>
+            <p class="about__paragraph">"Para los niños trabajamos, porque los niños son los que saben querer, 
+            porque los niños son la esperanza del mundo. Y queremos que nos quieran, y nos vean como cosa de su corazón." (José Martí).</p>
+
+            <div class="info">
+                <div class="info__cards">
+                    <div class="info__card info__card--servicio">
+                        <h3  class="info__card-title"><img src="./IMG/cc.png" alt="Icono de Control de crecimiento" class="info__icon">Control de Crecimiento</h3>
+                        <p class="info__card-text">Programa integral para monitorear el crecimiento y desarrollo de los niños.</p>
+                        <ul class="info__list">
+                            <li class="info__item">Evaluaciones de peso y altura</li>
+                            <li class="info__item">Análisis de desarrollo motor y cognitivo</li>
+                            <li class="info__item">Orientación nutricional personalizada</li>
+                            <li class="info__item">Consejería para padres sobre el desarrollo infantil</li>
+                        </ul>
+                    </div>
+
+                    <div class="info__card info__card--servicio">
+                        <h3 class="info__card-title"><img src="./IMG/vc.png" alt="Icono de Vacunacion" class="info__icon">Vacunación</h3>
+                        <p class="info__card-text">Gestión de un programa de vacunación completo para garantizar la inmunización adecuada.</p>
+                        <ul class="info__list">
+                            <li class="info__item">Vacunas rutinarias según calendario nacional</li>
+                            <li class="info__item">Registro y seguimiento de vacunas</li>
+                            <li class="info__item">Charlas informativas para padres</li>
+                            <li class="info__item">Asesoría sobre vacunas adicionales</li>
+                        </ul>
+                    </div>
+
+                    <div class="info__card info__card--servicio">
+                        <h3 class="info__card-title"><img src="./IMG/ec.png" alt="Icono de Manejo de Enfermedades Comunes" class="info__icon">Manejo de Enfermedades Comunes</h3>
+                        <p class="info__card-text">Atención especializada para el diagnóstico y tratamiento de enfermedades comunes en la infancia.</p>
+                        <ul class="info__list">
+                            <li class="info__item">Tratamiento de infecciones respiratorias</li>
+                            <li class="info__item">Atención a enfermedades gastrointestinales</li>
+                            <li class="info__item">Manejo de alergias y asma</li>
+                            <li class="info__item">Consejería para el cuidado preventivo</li>
+                        </ul>
+                    </div>
+
+                    <div class="info__card info__card--servicio">
+                        <h3 class="info__card-title"><img src="./IMG/dpi.png" alt="Icono de Diagnósticos por Imágenes" class="info__icon">Diagnósticos por Imágenes</h3>
+                        <p class="info__card-text">Servicios de diagnóstico por imágenes para evaluar la salud de los niños.</p>
+                        <ul class="info__list">
+                            <li class="info__item">Ultrasonidos para evaluación abdominal</li>
+                            <li class="info__item">Radiografías para lesiones y fracturas</li>
+                            <li class="info__item">Tomografías computarizadas (TC) según necesidad</li>
+                            <li class="info__item">Interpretación de estudios por especialistas</li>
+                        </ul>
+                    </div>
+
+                    <div class="info__card info__card--servicio">
+                        <h3 class="info__card-title"><img src="./IMG/sm.png" alt="Icono de psicologia" class="info__icon">Salud Mental Infantil</h3>
+                        <p class="info__card-text">Apoyo psicológico especializado para el bienestar emocional y conductual de los niños.</p>
+                        <ul class="info__list">
+                            <li class="info__item">Evaluación del desarrollo emocional y social</li>
+                            <li class="info__item">Terapias individuales y familiares</li>
+                            <li class="info__item">Intervención temprana en trastornos como ansiedad, TDAH o depresión</li>
+                            <li class="info__item">Talleres para fortalecer habilidades socioemocionales</li>
+                        </ul>
+                    </div>
+
+                    <div class="info__card info__card--servicio">
+                        <h3 class="info__card-title"><img src="./IMG/cg.png" alt="Icono de Consultas Generales" class="info__icon">Consultas Generales</h3>
+                        <p class="info__card-text">Atención médica integral para abordar diversas necesidades de salud en niños.</p>
+                        <ul class="info__list">
+                            <li class="info__item">Revisión de la salud general del niño, incluyendo historia clínica y examen físico.</li>
+                            <li class="info__item">Consejos sobre nutrición, vacunación y prevención de enfermedades.</li>
+                            <li class="info__item">Diagnóstico y tratamiento de afecciones frecuentes como resfriados, gripe, alergias y problemas gastrointestinales.</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="acerca de" class="knowledge">
+            <div class="knowledge__container container">
+                <div class="knowledge__texts">
+                    <h2 class="subtitle">Bienvenido al Hospital
+                        Pediátrico Pequeños Héroes</h2>
+                    <p class="knowledge__paragraph">En el Hospital Pediátrico, nos dedicamos desde 2018 a cuidar la salud de los más pequeños con calidez, profesionalismo y tecnología. 
+                    Nuestra historia comenzó con el compromiso de ofrecer atención médica pediátrica accesible y de calidad a todas las familias.
+                    Contamos con un equipo altamente capacitado en distintas especialidades pediátricas, que trabaja con vocación y amor hacia la niñez.
+                    A lo largo de los años, hemos crecido junto con la comunidad, desarrollando nuevas áreas de atención, participando en campañas de salud, y siendo reconocidos por nuestro compromiso con la excelencia médica.
+                    </p>
+                    <a href="#" class="cta"> Registra tu cita</a>
+                </div>
+
+                <figure class="knowledge__picture">
+                    <img src="./IMG/paciente.jpg" class="knowledge__img" alt="Nino con doctor">
+                </figure>
+            </div>
+        </section>
+
+        <section id="blog" class="questions container">
+            <h2 class="subtitle">Preguntas frecuentes</h2>
+            <p class="questions__paragraph">Aquí encontrarás respuestas a las preguntas más comunes sobre nuestros servicios. Si tienes otra duda, no dudes en contactarnos.</p>
+
+            <section class="questions__container">
+                <article class="questions__padding">
+                    <div class="questions__answer">
+                        <h3 class="questions__title">¿Cuál es el horario de atención del hospital?
+                            <span class="questions__arrow">
+                                <img src="./IMG/arrow.png" class="questions__img">
+                            </span>
+                        </h3>
+
+                        <p class="questions__show">Nuestro hospital atiende de lunes a viernes de 7:00 a.m. a 5:00 p.m.</p>
+                    </div>
+                </article>
+
+                <article class="questions__padding">
+                    <div class="questions__answer">
+                        <h3 class="questions__title">¿Dónde está ubicado el hospital?
+                            <span class="questions__arrow">
+                                <img src="./IMG/arrow.png" class="questions__img">
+                            </span>
+                        </h3>
+
+                        <p class="questions__show">De la Farmacia Santa Rita 3 cuadras al este, Masaya, Reparto La Reforma.</p>
+                    </div>
+                </article>
+
+                <article class="questions__padding">
+                    <div class="questions__answer">
+                        <h3 class="questions__title">¿Atienden solo a niños?
+                            <span class="questions__arrow">
+                                <img src="./IMG/arrow.png" class="questions__img">
+                            </span>
+                        </h3>
+
+                        <p class="questions__show">Sí. Nuestro hospital está especializado en la atención exclusiva de pacientes pediátricos, desde recién nacidos hasta adolescentes.</p>
+                    </div>
+                </article>
+            </section>
+        </section>
+        
+    </main>
+
+    <footer class="footer-contacto">
+        <div class="footer-contacto__row">
+            <div class="footer-contacto__section footer-contacto__section--info">
+                <h3 class="footer-contacto__heading">Contactos del Hospital Pediátrico</h3>
+                <p class="footer-contacto__text">| <strong>Teléfono</strong>: +505 2426 4890</p>
+                <p class="footer-contacto__text">| <strong>E-mail</strong>: hospitalpediatricopequeñosheroes@emp.com</p>
+                <p class="footer-contacto__text">| <strong>Dirección</strong>: De la farmacia Santa Rita, 3C al este, Masaya, Reparto la Reforma.</p>
+            </div>
+            <div class="footer-contacto__section footer-contacto__section--logo">
+                <img src="./IMG/logo.png" alt="Logo Salud Virtual" class="footer-contacto__logo">
+            </div>
         </div>
-        <img src="./IMG/HPPE.jpg" alt="Logo" class="inicio__imagen" />
-      </div>
-    </div>
 
-    <div class="info">
+        <div class="footer-contacto__divider"></div>
 
-      <div class="info__cards">
-        <div class="info__card info__card--mision">
-          <h3 class="info__card-title"><img src="./IMG/Mision.png" alt="Misión" class="info__icon">Misión</h3>
-          <p class="info__card-text">Brindar atención pediátrica de alta calidad, enfocados en la seguridad de nuestros pacientes, ofreciendo una atención médica integral por el mejor equipo de profesionales que conducen con ética, humanismo y excelencia.</p>
+        <div class="footer-contacto__social">
+            <a href="#"><img src="./IMG/Facebook.png" alt="Facebook" class="footer-contacto__social-icon"></a>
+            <a href="#"><img src="./IMG/whatsapp.png" alt="WhatsApp" class="footer-contacto__social-icon"></a>
+            <a href="#"><img src="./IMG/Instagram.png" alt="Instagram" class="footer-contacto__social-icon"></a>
         </div>
 
-        <div class="info__card info__card--vision">
-          <h3 class="info__card-title"><img src="./IMG/Vision.png" alt="Visión" class="info__icon">Visión</h3>
-          <p class="info__card-text">Ser el hospital líder en la atención médica pediátrica, que brinde la mejor experiencia hospitalaria en el departamento, impulsando y mejorando un modelo de asistencial privado.</p>
+        <div class="footer-contacto__bottom">
+            <p class="footer-contacto__copy">&copy; 2025 Hospital Pediátrico - Pequeños Héroes - Salud Virtual. Todos los derechos reservados.</p>
         </div>
+    </footer>
 
-        <div class="info__card info__card--valores">
-          <h3 class="info__card-title"><img src="./IMG/valores.png" alt="Valores" class="info__icon">Valores</h3>
-          <ul>
-            <li class="info__item"><strong>Respeto:</strong> Trato amable y honesto hacia pacientes y compañeros.</li>
-            <li class="info__item"><strong>Seguridad:</strong> Minimización de riesgos y protección de pacientes.</li>
-            <li class="info__item"><strong>Compromiso:</strong> Prioridad en la salud y bienestar de los niños.</li>
-            <li class="info__item"><strong>Empatía:</strong> Comprensión de las emociones de niños y familias.</li>
-            <li class="info__item"><strong>Innovación:</strong> Búsqueda constante de mejoras y resultados creativos.</li>
-          </ul>
-        </div>
-
-      </div>
-
-
-      <h2 class="info__section-title">Servicios</h2>
-
-      <div class="info__cards">
-
-        <div class="info__card info__card--servicio">
-          <h3  class="info__card-title"><img src="./IMG/C.jpg" alt="Icono de Control de crecimiento" class="info__icon">Control de Crecimiento</h3>
-          <p class="info__card-text">Programa integral para monitorear el crecimiento y desarrollo de los niños.</p>
-          <ul class="info__list">
-            <li class="info__item">Evaluaciones de peso y altura</li>
-            <li class="info__item">Análisis de desarrollo motor y cognitivo</li>
-            <li class="info__item">Orientación nutricional personalizada</li>
-            <li class="info__item">Consejería para padres sobre el desarrollo infantil</li>
-          </ul>
-        </div>
-
-        <div class="info__card info__card--servicio">
-          <h3 class="info__card-title"><img src="./IMG/V.png" alt="Icono de Vacunacion" class="info__icon">Vacunación</h3>
-          <p class="info__card-text">Gestión de un programa de vacunación completo para garantizar la inmunización adecuada.</p>
-          <ul class="info__list">
-            <li class="info__item">Vacunas rutinarias según calendario nacional</li>
-            <li class="info__item">Registro y seguimiento de vacunas</li>
-            <li class="info__item">Charlas informativas para padres</li>
-            <li class="info__item">Asesoría sobre vacunas adicionales</li>
-          </ul>
-        </div>
-
-        <div class="info__card info__card--servicio">
-          <h3 class="info__card-title"><img src="./IMG/E.png" alt="Icono de Manejo de Enfermedades Comunes" class="info__icon">Manejo de Enfermedades Comunes</h3>
-          <p class="info__card-text">Atención especializada para el diagnóstico y tratamiento de enfermedades comunes en la infancia.</p>
-          <ul class="info__list">
-            <li class="info__item">Tratamiento de infecciones respiratorias</li>
-            <li class="info__item">Atención a enfermedades gastrointestinales</li>
-            <li class="info__item">Manejo de alergias y asma</li>
-            <li class="info__item">Consejería para el cuidado preventivo</li>
-          </ul>
-        </div>
-
-        <div class="info__card info__card--servicio">
-          <h3 class="info__card-title"><img src="./IMG/D.png" alt="Icono de Diagnósticos por Imágenes" class="info__icon">Diagnósticos por Imágenes</h3>
-          <p class="info__card-text">Servicios de diagnóstico por imágenes para evaluar la salud de los niños.</p>
-          <ul class="info__list">
-            <li class="info__item">Ultrasonidos para evaluación abdominal</li>
-            <li class="info__item">Radiografías para lesiones y fracturas</li>
-            <li class="info__item">Tomografías computarizadas (TC) según necesidad</li>
-            <li class="info__item">Interpretación de estudios por especialistas</li>
-          </ul>
-        </div>
-
-        <div class="info__card info__card--servicio">
-          <h3 class="info__card-title"><img src="./IMG/psicologia.png" alt="Icono de psicologia" class="info__icon">Salud Mental Infantil</h3>
-          <p class="info__card-text">Apoyo psicológico especializado para el bienestar emocional y conductual de los niños.</p>
-          <ul class="info__list">
-            <li class="info__item">Evaluación del desarrollo emocional y social</li>
-            <li class="info__item">Terapias individuales y familiares</li>
-            <li class="info__item">Intervención temprana en trastornos como ansiedad, TDAH o depresión</li>
-            <li class="info__item">Talleres para fortalecer habilidades socioemocionales</li>
-          </ul>
-        </div>
-
-        <div class="info__card info__card--servicio">
-          <h3 class="info__card-title"><img src="./IMG/CC.png" alt="Icono de Consultas Generales" class="info__icon">Consultas Generales</h3>
-          <p class="info__card-text">Atención médica integral para abordar diversas necesidades de salud en niños.</p>
-          <ul class="info__list">
-            <li class="info__item">Revisión de la salud general del niño, incluyendo historia clínica y examen físico.</li>
-            <li class="info__item">Consejos sobre nutrición, vacunación y prevención de enfermedades.</li>
-            <li class="info__item">Diagnóstico y tratamiento de afecciones frecuentes como resfriados, gripe, alergias y problemas gastrointestinales.</li>
-          </ul>
-        </div>
-
-      </div>
-
-    </div>
-
-
-  </main>
-
-  
-  <footer class="footer-contacto">
-    <div class="footer-contacto__row">
-      <div class="footer-contacto__section footer-contacto__section--info">
-
-        <h3 class="footer-contacto__heading">Contactos del Hospital Pediátrico</h3>
-        <p class="footer-contacto__text">| <strong>Teléfono</strong>: +505 2426 4890</p>
-        <p class="footer-contacto__text">| <strong>E-mail</strong>: hospitalpediatricopequeñosheroes@emp.com</p>
-        <p class="footer-contacto__text">| <strong>Dirección</strong>: De la farmacia Santa Rita, 3C al este, Masaya, Reparto la Reforma.</p>
-      </div>
-      <div class="footer-contacto__section footer-contacto__section--logo">
-        <img src="./IMG/SV.jpg" alt="Logo Salud Virtual" class="footer-contacto__logo">
-      </div>
-    </div>
-
-    <div class="footer-contacto__divider"></div>
-
-    <div class="footer-contacto__social">
-      <a href="#"><img src="./IMG/Facebook.png" alt="Facebook" class="footer-contacto__social-icon"></a>
-      <a href="#"><img src="./IMG/whatsapp.png" alt="WhatsApp" class="footer-contacto__social-icon"></a>
-      <a href="#"><img src="./IMG/Instagram.png" alt="Instagram" class="footer-contacto__social-icon"></a>
-    </div>
-
-    <div class="footer-contacto__bottom">
-      <p class="footer-contacto__copy">&copy; 2025 Hospital Pediátrico - Pequeños Héroes - Salud Virtual. Todos los derechos reservados.</p>
-    </div>
-  </footer>
-
-  <script src="../JS/scripts.js"></script>
-  <script src="../JS/chart.js"></script>
-
+    <script src="./JS/questions.js"></script>
+    <script src="./JS/menu.js"></script>
+    
 </body>
 </html>
