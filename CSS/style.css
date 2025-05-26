@@ -5,6 +5,8 @@ body {
   margin-bottom: auto;
   padding: 0;
   background-color: #f0f8ff;
+  justify-content: center;
+  align-items: center;
 }
 
 /*CREAR VARIABLES PARA ACCEDER A LAS NO SE QUE COSA*/
@@ -308,6 +310,122 @@ body {
     display: block; /*para evitar problemas con espacios verticales*/
     border-radius: 10px;
 }
+
+
+
+/*=====================AQUI EMPIEZA EL LOGIN====================*/
+
+.auth-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Altura de la pantalla */
+  background-color: #eef7fe; /* O el fondo que ya tienes */
+}
+
+.auth {
+  display: flex;
+  width: 800px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.auth__panel {
+  padding: 20px;
+  width: 50%;
+}
+
+.auth__panel--left {
+  background-color: #b2ebf2;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  text-align: center;
+}
+
+.auth__panel--right {
+  background-color: #fff;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.auth__logo {
+  width: 100px;
+  margin-top: 20px;
+}
+
+.auth__title,
+.auth__form-title {
+  color: #00796b;
+  text-align: center;
+  
+  
+}
+
+.auth__description {
+  margin-top: 10px;
+}
+
+.auth__input-group {
+  position: relative;
+  margin-top: 10px;
+}
+
+.auth__icon {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  color: #00796b;
+}
+
+.auth__input {
+  width: 80%;
+  padding: 10px 10px 10px 35px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.auth__error {
+  color: red;
+  margin-top: 10px;
+  display: none;
+}
+
+.auth__button {
+  background-color: #00796b;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+  cursor: pointer;
+  display: block;
+  width: 30%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.auth__button:hover {
+  background-color: #004d40;
+}
+
+.auth__link {
+  display: block;
+  margin-top: 10px;
+  color: #00796b;
+  text-decoration: none;
+  text-align: center;
+}
+
+.auth__link:hover {
+  text-decoration: underline;
+}
+
+/*=============AQUI TERMINA EL LOGIN ===============*/
+
 
 /**********************************************************************************************************************/
 
@@ -693,7 +811,161 @@ body {
 /*====================================AQUI TERMINA EL FOOTER CON BEM====================================*/
 
 
-/*====================================AQUI TERMINA LOS DE INICIO====================================*/
+
+
+/*=====================LOGIN ============================*/
+
+.login-container {
+    background-color: #ffffff;
+    padding: 10px;
+    display: flex;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    width: 100px;
+    max-width: 300%;
+    align-items: center;
+    justify-content: center;
+}
+
+.welcome-section {
+    flex: 1;
+    padding-right: 60px;
+    margin: 10;
+    text-align:center;
+}
+
+
+.login-section {
+    flex: 1;
+    padding-left: 20px;
+
+}
+
+.login-section h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.logo {
+  display: block;
+  margin: 0 auto;
+  width:150px; 
+  height: auto;
+  align-items: center;
+}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.links {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.links a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.signup {
+    font-size: 14px;
+}
+
+.signup a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+
+.button-entrar {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  color: aliceblue;
+}
+
+.button- {
+  background-color: #7a7e7e;
+  color: rgb(248, 255, 248);
+  font-weight: bolder;
+  border: none;
+  font-size: 16px;
+  padding: 5px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+
+.contenedor {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 400px;
+  width: 100%;
+  padding: 30px;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+
+input {
+  display: block;
+  margin: 10px auto;
+  padding: 10px;
+  width: 80%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  background: #7a7e7e ;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button:hover {
+  background: #7a7e7e;
+}
+
+a {
+  margin-top: 10px;
+  color: #007BFF;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.parra{
+   background-color: white;
+    padding: 30px;
+    display: flex;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    width: 600px;
+    max-width: 330%;
+    align-items: center;
+}
 
 
 
@@ -876,7 +1148,7 @@ body {
 }
 
 .summary__card {
-  background-color: #e9f2fb;
+  background-color: #d9e2ec;
   padding: 20px;
   border-radius: 12px;
   text-align: center;
@@ -885,12 +1157,12 @@ body {
 
 .summary__label {
   font-size: 14px;
-  color: #555;
+  color: #000000;
 }
 
 .summary__value {
   font-size: 26px;
-  color: #2c7be5;
+  color: #000000;
 }
 
 .charts {
@@ -903,7 +1175,7 @@ body {
 .charts__box {
   flex: 1;
   min-width: 300px;
-  background-color: #ffffff;
+  background-color: #d9e2ec;
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
@@ -930,7 +1202,7 @@ body {
 .details__box {
   flex: 1;
   min-width: 280px;
-  background-color: #f7faff;
+  background-color: #d9e2ec;
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
@@ -944,7 +1216,7 @@ body {
 
 .details__title {
   font-size: 16px;
-  color: #333;
+  color: #000000;
 }
 
 .details__list {
@@ -956,11 +1228,11 @@ body {
   justify-content: space-between;
   padding: 5px 0;
   font-size: 14px;
-  color: #444;
+  color: #000000;
 }
 
 .distribution {
-  background-color: #ffffff;
+  background-color: #d9e2ec;
   padding: 30px;
   border-radius: 20px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -991,7 +1263,7 @@ body {
 .distribution__label {
   font-size: 16px;
   margin-bottom: 10px;
-  color: #333;
+  color: #000;
 }
 
 .distribution__chart {
