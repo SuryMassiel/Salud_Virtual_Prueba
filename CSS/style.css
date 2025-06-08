@@ -330,14 +330,15 @@ body {
 
 
 
+
 /*=====================AQUI EMPIEZA EL LOGIN====================*/
 
 .auth-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Altura de la pantalla */
-  background-color: #eef7fe; /* O el fondo que ya tienes */
+  height: 100vh; 
+  background-color: #eef7fe; 
 }
 
 .auth {
@@ -382,7 +383,7 @@ body {
 
 .auth__description {
   margin-top: 10px;
-}
+  color:#000000}
 
 .auth__input-group {
   position: relative;
@@ -391,8 +392,8 @@ body {
 
 .auth__icon {
   position: absolute;
-  top: 50%;
-  left: 20px;
+  top: 55%;
+  left: 10px;
   transform: translateY(-50%);
   color: #00796b;
 }
@@ -405,10 +406,16 @@ body {
   border-radius: 5px;
 }
 
+.aut__contrasena{
+  text-align: center;
+  color: #00796b;
+}
+
 .auth__error {
   color: red;
   margin-top: 10px;
   display: none;
+  text-align: center
 }
 
 .auth__button {
@@ -441,7 +448,108 @@ body {
   text-decoration: underline;
 }
 
+/*Para responsivo a movil etc...*/
+@media (max-width: 768px) {
+  .auth {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .auth__panel {
+    width: 100%;
+    border-radius: 0;
+  }
+
+  .auth__panel--left {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 0;
+  }
+
+  .auth__panel--right {
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+
+  .auth__form {
+    width: 100%;
+    align-items: center;
+  }
+
+  .auth__input,
+  .auth__button {
+    width: 90%;
+  }
+
+  .auth__mensaje {
+    width: 90%;
+    margin: 10px auto 0 auto;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .auth__input {
+    width: 85%;
+    font-size: 14px;
+  }
+
+  .auth__button {
+    width: 70%;
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .auth__title,
+  .auth__form-title {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .auth__logo {
+    width: 80px;
+    margin-bottom: 10px;
+  }
+
+  .aut__contrasena {
+    text-align: center;
+    font-size: 13px;
+  }
+
+  .auth__mensaje {
+    font-size: 13px;
+  }
+}
+
+  /*AQUI TERMINA EL RESPONSIVO*/
+
+/*==================PARA MENSAJE==============*/
+.auth__mensaje {
+  margin-top: 10px;
+  padding: 5px;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+.auth__mensaje--error {
+  color: #c00;
+  border: 1px solid #c00;
+  text-align: center;
+}
+
+.auth__mensaje--success {
+  color: #0a0;
+  border: 1px solid #0a0;
+}
+
+
+
 /*=============AQUI TERMINA EL LOGIN ===============*/
+
+
 
 
 /**********************************************************************************************************************/

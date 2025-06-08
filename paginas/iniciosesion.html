@@ -1,47 +1,48 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Salud Virtual</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Salud Virtual</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="../CSS/style.css">
+  <link rel="stylesheet" href="../CSS/style.css">
 </head>
-
-
 <body>
+
 <div class="auth-wrapper">
   <div class="auth">
     <div class="auth__panel auth__panel--left">
       <img class="auth__logo" src="../IMG/LOGO.png" alt="LOGO">
-      <h1 class="auth__title">HOLA!</h1>
+      <h1 class="auth__title">¡Hola!</h1>
       <p class="auth__description">Por favor, ingresa tus datos para continuar</p>
     </div>
 
-  <div class="auth__panel auth__panel--right">
-    <form class="auth__form" id="loginForm">
-      <h1 class="auth__form-title">Iniciar Sesión</h1>
+    <div class="auth__panel auth__panel--right">
+      <form class="auth__form" id="loginForm">
+      <div id="mensaje" class="auth__mensaje"></div>
 
-      <div class="auth__input-group">
-        <i class="auth__icon fas fa-user"></i>
-        <input class="auth__input" type="text" id="userLogin" placeholder="Nombre de usuario" required>
-      </div>
+        <h1 class="auth__form-title">Iniciar Sesión</h1>
 
-      <div class="auth__input-group">
-        <i class="auth__icon fas fa-envelope"></i>
-        <input class="auth__input" type="email" id="emailRegistro" placeholder="Email" required>
-      </div>
+        <div class="auth__input-group">
+          <i class="auth__icon fas fa-user"></i>
+          <input class="auth__input" type="text" id="userLogin" placeholder="Nombre de usuario" required>
+        </div>
 
-      <div class="auth__input-group">
-        <i class="auth__icon fas fa-lock"></i>
-        <input class="auth__input" type="password" id="passwordLogin" placeholder="Contraseña" required>
-      </div>
+        <div class="auth__input-group">
+          <i class="auth__icon fas fa-lock"></i>
+          <input class="auth__input" type="password" id="passwordLogin" placeholder="Contraseña" required minlength="8">
+        </div>
 
-      <p class="auth__error">La contraseña ingresada es incorrecta</p>
-      <button class="auth__button" type="button" onclick="iniciarSesion()">Entrar</button>
-      <a class="auth__link" href="crearcuenta.html">¿No tienes una cuenta? Regístrate</a>
-    </form>
+        <a class="auth__link" href="#">¿Olvidó su contraseña?</a>
+
+        <button type="submit" class="auth__button">Acceder</button>
+
+        <a class="auth__link" href="crearcuenta.html">¿No tienes una cuenta? Regístrate</a>
+      </form>
+    </div>
   </div>
-  <script src="../JS/scripts.js"></script>
 </div>
-</div>
+
+<script src="../JS/scripts.js"></script>
+</body>
+</html>

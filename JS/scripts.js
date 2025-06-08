@@ -1,42 +1,93 @@
+// ===========LOGIN============
 
-// // ===========LOGIN============
+document.addEventListener("DOMContentLoaded", function () {
+  const registerForm = document.getElementById("registerForm");
+  const loginForm = document.getElementById("loginForm");
 
-function registrar() {
-  const user = document.getElementById("userLogin").value.trim();
-  const email = document.getElementById("emailRegistro").value.trim();
-  const pass = document.getElementById("passwordLogin").value.trim();
-  const confirmRegistro = document.getElementById("confirmRegistro").value.trim();
+  function mostrarMensaje(texto, tipo = "error") {
+    const mensaje = document.getElementById("mensaje");
+    if (!mensaje) return;
 
-  if (!user || !email || !pass || !confirmRegistro) {
-    alert("Todos los campos son obligatorios.");
-    return;
+    mensaje.textContent = texto;
+    mensaje.className = "auth__mensaje";
+
+    if (tipo === "error") {
+      mensaje.classList.add("auth__mensaje--error");
+    } else {
+      mensaje.classList.add("auth__mensaje--success");
+    }
+
+    mensaje.style.display = "block";
+
+    setTimeout(() => {
+      mensaje.style.display = "none";
+    }, 4000);
   }
 
-  if (pass !== confirmRegistro) {
-    alert("Las contraseñas no coinciden.");
-    return;
+  // === Registro ===
+  if (registerForm) {
+    registerForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const user = document.getElementById("userRegistro").value.trim();
+      const email = document.getElementById("emailRegistro").value.trim();
+      const pass = document.getElementById("passwordRegistro").value.trim();
+      const confirm = document.getElementById("confirmRegistro").value.trim();
+
+      if (pass !== confirm) {
+        mostrarMensaje("Las contraseñas no coinciden.");
+        return;
+      }
+
+      let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+
+      const existeUsuario = usuarios.some(
+        (u) => u.user.toLowerCase() === user.toLowerCase()
+      );
+
+      if (existeUsuario) {
+        mostrarMensaje("El usuario ya existe. Elige otro.");
+        return;
+      }
+
+      usuarios.push({ user, email, password: pass });
+      localStorage.setItem("usuarios", JSON.stringify(usuarios));
+
+      mostrarMensaje("¡Registro exitoso!", "success");
+
+      setTimeout(() => {
+        window.location.href = "../paginas/Dasboard.html";
+      }, 1500);
+    });
   }
 
-  // Todo correcto
-  alert("¡Registro exitoso!");
-  window.location.href = "../paginas/Dasboard.html";
+  // === Inicio de sesión ===
+  if (loginForm) {
+    loginForm.addEventListener("submit", function (event) {
+      event.preventDefault();
 
-}
+      const user = document.getElementById("userLogin").value.trim();
+      const pass = document.getElementById("passwordLogin").value.trim();
 
-// Mover esta función fuera de registrar()
-function iniciarSesion() {
-  const name = document.getElementById("userLogin").value.trim();
-  const password = document.getElementById("passwordLogin").value.trim();
+      const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
-  if (!name || !password) {
-    alert("Todos los campos son obligatorios.");
-    return;
+      const usuarioValido = usuarios.find(
+        (u) => u.user.toLowerCase() === user.toLowerCase() && u.password === pass
+      );
+
+      if (usuarioValido) {
+        mostrarMensaje("Inicio de sesión exitoso", "success");
+        setTimeout(() => {
+          window.location.href = "../paginas/Dasboard.html";
+        }, 1500);
+      } else {
+        mostrarMensaje("Usuario o contraseña incorrectos.");
+      }
+    });
   }
+});
 
-  // Aquí podrías agregar validación con datos guardados si deseas
-  alert("¡Inicio de Sesión Exitoso!");
-  window.location.href = "../paginas/home.html";
-}
+
 //=================AQUI TERMINA=========================
 
 

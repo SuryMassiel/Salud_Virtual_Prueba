@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Salud Virtual</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crear Cuenta - Salud Virtual</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="../CSS/style.css">
+  <link rel="stylesheet" href="../CSS/style.css">
 </head>
-
 <body>
 
-<div class="auth-wrapper"> <!-- CONTENEDOR NUEVO -->
+<div class="auth-wrapper">
   <div class="auth">
     <div class="auth__panel auth__panel--left">
       <img class="auth__logo" src="../IMG/LOGO.png" alt="LOGO">
@@ -19,12 +18,13 @@
     </div>
 
     <div class="auth__panel auth__panel--right">
-      <form class="auth__form" id="loginForm" autocomplete="on">
+      <form class="auth__form" id="registerForm" autocomplete="on">
+        <div id="mensaje" class="auth__mensaje"></div>
         <h1 class="auth__form-title">Crea una cuenta</h1>
 
         <div class="auth__input-group">
           <i class="auth__icon fas fa-user"></i>
-          <input class="auth__input" type="text" id="userLogin" placeholder="Nombre de usuario" required>
+          <input class="auth__input" type="text" id="userRegistro" placeholder="Nombre de usuario" required>
         </div>
 
         <div class="auth__input-group">
@@ -34,22 +34,22 @@
 
         <div class="auth__input-group">
           <i class="auth__icon fas fa-lock"></i>
-          <input class="auth__input" type="password" id="passwordLogin" placeholder="Contraseña" required>
+          <input class="auth__input" type="password" id="passwordRegistro" placeholder="Contraseña" required minlength="8">
         </div>
 
         <div class="auth__input-group">
           <i class="auth__icon fas fa-lock"></i>
-          <input class="auth__input" type="password" id="confirmRegistro" placeholder="Confirmar Contraseña" required>
+          <input class="auth__input" type="password" id="confirmRegistro" placeholder="Confirmar Contraseña" required minlength="8">
         </div>
 
-        <p class="auth__error">La contraseña ingresada es incorrecta</p>
+        <button type="submit" class="auth__button">Registrarse</button>
 
-        <button class="auth__button" type="button" onclick="registrar()">Ingresar</button>
         <a class="auth__link" href="iniciosesion.html">¿Tienes una cuenta? Iniciar Sesión</a>
       </form>
     </div>
   </div>
-</div> <!-- CIERRA auth-wrapper -->
+</div>
 
-  <script src="../JS/menu.js" defer></script>
+<script src="../JS/scripts.js"></script>
 </body>
+</html>
