@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Salud Virtual</title>
   <link rel="icon" type="image/x-icon" href="../IMG/favicon.ico"/>
   <link rel="stylesheet" href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="../CSS/style.css" />
+  <link rel="stylesheet" href="../CSS/style.css">
 </head>
 <body class="con-menu">
     <!-- MENU LATERAL -->
@@ -53,57 +52,47 @@
                 </ul>
             </div>
         </nav>
-    <!-- FORMULARIO HISTORIAL MÉDICO -->
-    <main class="mainhome">
-      <div class="formulario">
-        <h1 class="formulario__titulo">
-          <img src="../IMG/historial.png" alt="Ícono de historial" class="formulario__icono">
-          Historial Médico
+        <!-- CONTENIDO PRINCIPAL -->
+
+    <!-- MAIN DE CITAS MÉDICAS -->
+    <main>
+      <div class="tabla">
+        <h1 class="tabla__titulo">
+          <img src="../IMG/Calendario.png" alt="icono citas" class="tabla__icono">
+          Citas Médicas Registradas
         </h1>
 
-        <form id="historialForm">
-          <div class="formulario__grid">
-            <!-- Columna izquierda -->
-            <div class="formulario__columna">
-              <label for="idPaciente" class="formulario__label">ID del Paciente</label>
-              <select id="idPaciente" name="idPaciente" class="formulario__select" required>
-                <option value="">---------</option>
-                <option value="1">Paciente 1</option>
-                <option value="2">Paciente 2</option>
-              </select>
+        <div class="tabla__acciones">
+          <input type="text" placeholder="Buscar cita médica..." class="tabla__buscador" id="buscador-cita">
+          <a href="../paginas/agendarcitas.html" class="tabla__boton tabla__boton--agregar">
+            <img src="../IMG/add.png" alt="icono historial" class="tabla__icono-boton">
+          </a>
+          <button class="tabla__boton tabla__boton--buscar-citam"><img src="../IMG/buscar.png" alt="icono buscar" class="tabla__icono-boton"></button>
+          <button class="tabla__boton tabla__boton--editar-citam"><img src="../IMG/editar.png" alt="icono editar" class="tabla__icono-boton"></button>
+          <button class="tabla__boton tabla__boton--eliminar-citam"><img src="../IMG/delete.png" alt="icono eliminar" class="tabla__icono-boton"></button>  
+        </div>
 
-              <label for="codigo" class="formulario__label">Código Historial Médico</label>
-              <input type="text" id="codigo" name="codigo" class="formulario__input" required>
-              
-              <label for="diagnostico" class="formulario__label">Diagnóstico</label>
-              <textarea id="diagnostico" name="diagnostico" class="formulario__input" rows="3" required></textarea>
-
-              <label for="tratamiento" class="formulario__label">Tratamiento</label>
-              <textarea id="tratamiento" name="tratamiento" class="formulario__input" rows="3" required></textarea>
-            </div>
-
-            <!-- Columna derecha -->
-            <div class="formulario__columna">
-              <label for="pronostico" class="formulario__label">Pronóstico</label>
-              <input type="text" id="pronostico" name="pronostico" class="formulario__input" required>
-
-              <label for="fecha" class="formulario__label">Fecha</label>
-              <input type="date" id="fecha" name="fecha" class="formulario__input" required>
-
-              <label for="peso" class="formulario__label">Peso en libras</label>
-              <input type="number" id="peso" name="peso" class="formulario__input" required>
-
-              <label for="medida" class="formulario__label">Medida</label>
-              <input type="text" id="medida" name="medida" class="formulario__input" required>
-            </div>
-          </div>
-
-          <!-- Botones -->
-          <div class="formulario__botones">
-            <button type="submit" class="formulario__boton formulario__boton--guardar">Guardar registro</button>
-            <a href="../paginas/historialmedico.html" class="formulario__boton formulario__boton--ver">Ver resultado</a>
-          </div>
-        </form>
+        <div class="tabla__contenedor">
+          <table class="tabla__estructura" id="tablaCitas">
+            <thead class="tabla__cabecera">
+              <tr class="tabla__fila-citam">
+                <th class="tabla__encabezado">Código de Cita</th>
+                <th class="tabla__encabezado">Nombre Tutor</th>
+                <th class="tabla__encabezado">Apellidos Tutor</th>
+                <th class="tabla__encabezado">Nombre Paciente</th>
+                <th class="tabla__encabezado">Apellidos Paciente</th>
+                <th class="tabla__encabezado">Motivo</th>
+                <th class="tabla__encabezado">Fecha</th>
+                <th class="tabla__encabezado">Hora</th>
+                <th class="tabla__encabezado">Doctor</th>
+                <th class="tabla__encabezado">Estado</th>
+              </tr>
+            </thead>
+            <tbody class="tabla__cuerpo">
+              <!-- Datos se insertarán aquí dinámicamente -->
+            </tbody>
+          </table>
+        </div>
       </div>
     </main>
 
@@ -133,9 +122,9 @@
         <p class="footer-contacto__copy">&copy; 2025 Hospital Pediátrico - Pequeños Héroes - Salud Virtual. Todos los derechos reservados.</p>
       </div>
     </footer>
-
   </section>
 
   <script src="../JS/menu.js" defer></script>
+
 </body>
 </html>

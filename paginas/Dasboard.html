@@ -3,149 +3,177 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Salud Virtual</title>
+  <title>Dashboard – Hospital Pediátrico</title>
   <link rel="icon" type="image/x-icon" href="../IMG/favicon.ico"/>
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="../CSS/style.css" />
 </head>
-
-<body> 
-    <header class="header">
-  <!-- Botón toggle para mostrar/ocultar el menú -->
-  <input type="checkbox" id="header__toggle" class="header__checkbox" hidden />
-  <label for="header__toggle" class="header__toggle-button">☰</label>
-
-  <!-- Menú de navegación lateral -->
-  <nav class="header__menu">
-    <img src="../IMG/LOGO.png" alt="Logo Salud Virtual" class="header__logo" />
-
-    <a href="../index.html" class="header__link"><button class="header__button">Inicio</button></a>
-    <a href="../paginas/pacientes.html" class="header__link"><button class="header__button">Pacientes</button></a>
-    <a href="../paginas/tutores.html" class="header__link"><button class="header__button">Tutores</button></a>
-    <a href="../paginas/historialmedico.html" class="header__link"><button class="header__button">Historial Médico</button></a>
-    <a href="../paginas/registrotutor.html" class="header__link"><button class="header__button">Registrar Tutor</button></a>
-    <a href="../paginas/registrarpacientes.html" class="header__link"><button class="header__button">Registrar Paciente</button></a>
-    <a href="../paginas/agendarcitas.html" class="header__link"><button class="header__button">Agendar Cita Médica</button></a>
-    <a href="../paginas/agregarhistorial.html" class="header__link"><button class="header__button">Agregar Historial Médico</button></a>
-    <a href="../paginas/Dasboard.html" class="header__link"><button class="header__button">Dashboard</button></a>
-  </nav>
-
-
-</header>
-
-<h1 class="dashboard__heading">Dashboard – Hospital Pediátrico</h1>
-    <section class="summary">
-      <div class="summary__card"><p class="summary__label">Citas Totales</p><h2 class="summary__value">7663</h2></div>
-      <div class="summary__card"><p class="summary__label">Consultas Atendidas</p><h2 class="summary__value">6422</h2></div>
-      <div class="summary__card"><p class="summary__label">Citas Reprogramadas</p><h2 class="summary__value">34</h2></div>
-      <div class="summary__card"><p class="summary__label">Citas Canceladas</p><h2 class="summary__value">14</h2></div>
-      <div class="summary__card"><p class="summary__label">Citas Modificadas</p><h2 class="summary__value">09</h2></div>
-      <div class="summary__card"><p class="summary__label">Pacientes con Alergias</p><h2 class="summary__value">4214</h2></div>
-      <div class="summary__card"><p class="summary__label">Total de Pacientes Rurales vs Urbanos</p><h2 class="summary__value">7663</h2></div>
-    </section>
-
-    <section class="charts">
-      <div class="charts__box">
-        <div class="charts__header">
-          <h2 class="charts__title">Registros Totales</h2>
-          <span class="charts__subtitle">De enero a mayo</span>
-        </div>
-        <canvas id="completedTrend"></canvas>
-      </div>
-      <div class="charts__box">
-        <div class="charts__header">
-          <h2 class="charts__title">Citas Atendidas</h2>
-          <span class="charts__subtitle">De enero a mayo</span>
-        </div>
-        <canvas id="avgDuration"></canvas>
-      </div>
-    </section>
-
-    <section class="details">
-      <div class="details__box">
-        <div class="details__header">
-          <h2 class="details__title">Citas Reprogramadas</h2>
-          <span><strong>De enero a mayo</strong></span>
-        </div>
-        <ul class="details__list">
-          <li class="details__item"><span>Menores de 10 años</span><span>87</span></li>
-          <li class="details__item"><span>Mayores de 10 años</span><span>576</span></li>
+<body class="con-menu">
+    <!-- MENU LATERAL -->
+    <section id="menuLateral" class="menuLateral">
+        <a href="../paginas/home.html" class="menuLateral__brand"> 
+            <img src="../IMG/logo.png" alt="Logo Salud Virtual" class="logo-icon">
+            SALUD VIRTUAL
+        </a>
+        <ul class="menuLateral__side-menu">
+            <li class="menuLateral__divisor" data-tex="PACIENTES"></li>  
+            <li><a href="../paginas/pacientes.html"><i class="fas fa-user-injured menuLateral__icon"></i>Pacientes</a></li>
+            <li><a href="../paginas/registrarpacientes.html" class="active"><i class="fas fa-user-plus menuLateral__icon"></i>Nuevo Paciente</a></li>
+            <li class="menuLateral__divisor" data-tex="TUTORES"></li>  
+            <li><a href="../paginas/tutores.html"><i class="fas fa-users menuLateral__icon"></i>Tutores</a></li>
+            <li><a href="../paginas/registrotutor.html"><i class="fas fa-user-plus menuLateral__icon"></i>Nuevo Tutor</a></li>
+            <li class="menuLateral__divisor" data-tex="CITAS MÉDICAS"></li>  
+            <li><a href="../paginas/citasmedicas.html"><i class="fas fa-calendar-alt menuLateral__icon"></i>Citas</a></li>
+            <li><a href="../paginas/agendarcitas.html"><i class="fas fa-calendar-plus menuLateral__icon"></i>Nueva Cita</a></li>
+            <li class="menuLateral__divisor" data-tex="DOCTORES"></li>  
+            <li><a href="../paginas/doctores.html"><i class="fas fa-user-md menuLateral__icon"></i>Doctores</a></li>
+            <li><a href="../paginas/registrardoctores.html"><i class="fas fa-plus-circle menuLateral__icon"></i>Nuevo Doctor</a></li>
+            <li class="menuLateral__divisor" data-tex="HISTORIAL"></li>  
+            <li><a href="../paginas/historialmedico.html"><i class="fas fa-notes-medical menuLateral__icon"></i>Historiales</a></li>
+            <li><a href="../paginas/agregarhistorial.html"><i class="fas fa-file-medical menuLateral__icon"></i>Nuevo Historial</a></li>
+            <li class="menuLateral__divisor" data-tex="REPORTES"></li>  
+            <li><a href="../paginas/Dasboard.html"><i class="fas fa-chart-line menuLateral__icon"></i>Dashboard</a></li>
         </ul>
-      </div>
-
-      <div class="details__box">
-        <div class="details__header">
-          <h2 class="details__title">Citas Canceladas</h2>
-          <span><strong>De enero a mayo</strong></span>
-        </div>
-        <ul class="details__list">
-          <li class="details__item"><span>Menores de 10 años</span><span>12</span></li>
-          <li class="details__item"><span>Mayores de 10 años</span><span>2</span></li>
-        </ul>
-      </div>
-
-      <div class="details__box">
-        <div class="details__header">
-          <h2 class="details__title">Citas Modificadas</h2>
-          <span><strong>De enero a mayo</strong></span>
-        </div>
-        <ul class="details__list">
-          <li class="details__item"><span>Menores de 10 años</span><span>3</span></li>
-          <li class="details__item"><span>Mayores de 10 años</span><span>6</span></li>
-        </ul>
-      </div>
-
-      <div class="details__box">
-        <div class="details__header">
-          <h2 class="details__title">Pacientes con Alergias</h2>
-          <span><strong>De enero a mayo</strong></span>
-        </div>
-        <canvas id="Alergias"></canvas>
-      </div>
     </section>
+    <!-- CONTENIDO PRINCIPAL -->
+    <section id="content" class="contenido">
+        <!-- MENU SUPERIOR -->
+        <nav>
+            <button id="menuToggle" class="nav__hamburger">
+                <i class='bx bx-menu'></i>
+            </button>
+            <span class="nav__divider"></span>
+            <div class="nav__profile">
+                <img src="../IMG/user.png" class="nav__profile-img" alt="Usuario">
+                <ul class="menuLateral__side-dropdown">
+                    <li><a href="#"><i class="bx bxs-user-circle nav__link-icon"></i>Mi Perfil</a></li>
+                    <li><a href="#"><i class="bx bxs-cog nav__link-icon"></i>Configuración</a></li>
+                    <li><a href="#"><i class="bx bxs-log-out-circle nav__link-icon"></i>Cerrar Sesión</a></li>
+                </ul>
+            </div>
+        </nav>
+    <!-- MAIN DASHBOARD -->
+    <main>
+      <h1 class="dashboard__heading">Dashboard – Hospital Pediátrico</h1>
 
-    <section class="distribution">
-      <h2 class="distribution__title">Distribución de Pacientes</h2>
-      <div class="distribution__pair">
-        <div class="distribution__item">
-          <h3 class="distribution__label">Rural vs Urbano</h3>
-          <canvas id="patientChart" class="distribution__chart"></canvas>
+      <section class="summary">
+        <div class="summary__card"><p class="summary__label">Citas Totales</p><h2 class="summary__value">7663</h2></div>
+        <div class="summary__card"><p class="summary__label">Consultas Atendidas</p><h2 class="summary__value">6422</h2></div>
+        <div class="summary__card"><p class="summary__label">Citas Reprogramadas</p><h2 class="summary__value">34</h2></div>
+        <div class="summary__card"><p class="summary__label">Citas Canceladas</p><h2 class="summary__value">14</h2></div>
+        <div class="summary__card"><p class="summary__label">Citas Modificadas</p><h2 class="summary__value">09</h2></div>
+        <div class="summary__card"><p class="summary__label">Pacientes con Alergias</p><h2 class="summary__value">4214</h2></div>
+        <div class="summary__card"><p class="summary__label">Total de Pacientes Rurales vs Urbanos</p><h2 class="summary__value">7663</h2></div>
+      </section>
+
+      <section class="charts">
+        <div class="charts__box">
+          <div class="charts__header">
+            <h2 class="charts__title">Registros Totales</h2>
+            <span class="charts__subtitle">De enero a mayo</span>
+          </div>
+          <canvas id="completedTrend"></canvas>
         </div>
-        <div class="distribution__item">
-          <h3 class="distribution__label">Por Género</h3>
-          <canvas id="tipoAtencionChart" class="distribution__chart"></canvas>
+        <div class="charts__box">
+          <div class="charts__header">
+            <h2 class="charts__title">Citas Atendidas</h2>
+            <span class="charts__subtitle">De enero a mayo</span>
+          </div>
+          <canvas id="avgDuration"></canvas>
+        </div>
+      </section>
+
+      <section class="details">
+        <div class="details__box">
+          <div class="details__header">
+            <h2 class="details__title">Citas Reprogramadas</h2>
+            <span><strong>De enero a mayo</strong></span>
+          </div>
+          <ul class="details__list">
+            <li class="details__item"><span>Menores de 10 años</span><span>87</span></li>
+            <li class="details__item"><span>Mayores de 10 años</span><span>576</span></li>
+          </ul>
+        </div>
+
+        <div class="details__box">
+          <div class="details__header">
+            <h2 class="details__title">Citas Canceladas</h2>
+            <span><strong>De enero a mayo</strong></span>
+          </div>
+          <ul class="details__list">
+            <li class="details__item"><span>Menores de 10 años</span><span>12</span></li>
+            <li class="details__item"><span>Mayores de 10 años</span><span>2</span></li>
+          </ul>
+        </div>
+
+        <div class="details__box">
+          <div class="details__header">
+            <h2 class="details__title">Citas Modificadas</h2>
+            <span><strong>De enero a mayo</strong></span>
+          </div>
+          <ul class="details__list">
+            <li class="details__item"><span>Menores de 10 años</span><span>3</span></li>
+            <li class="details__item"><span>Mayores de 10 años</span><span>6</span></li>
+          </ul>
+        </div>
+
+        <div class="details__box">
+          <div class="details__header">
+            <h2 class="details__title">Pacientes con Alergias</h2>
+            <span><strong>De enero a mayo</strong></span>
+          </div>
+          <canvas id="Alergias"></canvas>
+        </div>
+      </section>
+
+      <section class="distribution">
+        <h2 class="distribution__title">Distribución de Pacientes</h2>
+        <div class="distribution__pair">
+          <div class="distribution__item">
+            <h3 class="distribution__label">Rural vs Urbano</h3>
+            <canvas id="patientChart" class="distribution__chart"></canvas>
+          </div>
+          <div class="distribution__item">
+            <h3 class="distribution__label">Por Género</h3>
+            <canvas id="tipoAtencionChart" class="distribution__chart"></canvas>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer-contacto">
+      <div class="footer-contacto__row">
+        <div class="footer-contacto__section footer-contacto__section--info">
+          <h3 class="footer-contacto__heading">Contactos del Hospital Pediátrico</h3>
+          <p class="footer-contacto__text">| <strong>Teléfono</strong>: +505 2426 4890</p>
+          <p class="footer-contacto__text">| <strong>E-mail</strong>: hospitalpediatricopequeñosheroes@emp.com</p>
+          <p class="footer-contacto__text">| <strong>Dirección</strong>: De la farmacia Santa Rita, 3C al este, Masaya, Reparto la Reforma.</p>
+        </div>
+        <div class="footer-contacto__section footer-contacto__section--logo">
+          <img src="../IMG/logo.png" alt="Logo Salud Virtual" class="footer-contacto__logo">
         </div>
       </div>
-    </section>
-  </div>
+
+      <div class="footer-contacto__divider"></div>
+
+      <div class="footer-contacto__social">
+        <a href="#"><img src="../IMG/Facebook.png" alt="Facebook" class="footer-contacto__social-icon"></a>
+        <a href="#"><img src="../IMG/whatsapp.png" alt="WhatsApp" class="footer-contacto__social-icon"></a>
+        <a href="#"><img src="../IMG/Instagram.png" alt="Instagram" class="footer-contacto__social-icon"></a>
+      </div>
+
+      <div class="footer-contacto__bottom">
+        <p class="footer-contacto__copy">&copy; 2025 Hospital Pediátrico - Pequeños Héroes - Salud Virtual. Todos los derechos reservados.</p>
+      </div>
+    </footer>
+
+  </section>
 
   <script src="../JS/chart.js"></script>
   <script src="../JS/scripts.js"></script>
-  
-  <footer class="footer-contacto">
-  <div class="footer-contacto__row">
-    <div class="footer-contacto__section footer-contacto__section--info">
-      <h3 class="footer-contacto__heading">Contactos del Hospital Pediátrico</h3>
-      <p class="footer-contacto__text">| <strong>Teléfono</strong>: +505 2426 4890</p>
-      <p class="footer-contacto__text">| <strong>E-mail</strong>: hospitalpediatricopequeñosheroes@emp.com</p>
-      <p class="footer-contacto__text">| <strong>Dirección</strong>: De la farmacia Santa Rita, 3C al este, Masaya, Reparto la Reforma.</p>
-    </div>
-    <div class="footer-contacto__section footer-contacto__section--logo">
-      <img src="../IMG/SV.jpg" alt="Logo Salud Virtual" class="footer-contacto__logo">
-    </div>
-  </div>
-
-  <div class="footer-contacto__divider"></div>
-
-  <div class="footer-contacto__social">
-    <a href="#"><img src="../IMG/Facebook.png" alt="Facebook" class="footer-contacto__social-icon"></a>
-    <a href="#"><img src="../IMG/whatsapp.png" alt="WhatsApp" class="footer-contacto__social-icon"></a>
-    <a href="#"><img src="../IMG/Instagram.png" alt="Instagram" class="footer-contacto__social-icon"></a>
-  </div>
-
-  <div class="footer-contacto__bottom">
-    <p class="footer-contacto__copy">&copy; 2025 Hospital Pediátrico - Pequeños Héroes - Salud Virtual. Todos los derechos reservados.</p>
-  </div>
-</footer>
+  <script src="../JS/menu.js"></script>
 
 </body>
 </html>

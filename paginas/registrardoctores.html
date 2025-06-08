@@ -53,55 +53,69 @@
                 </ul>
             </div>
         </nav>
-    <!-- FORMULARIO HISTORIAL MÉDICO -->
+        <!-- CONTENIDO PRINCIPAL -->
+
+    <!-- FORMULARIO REGISTRAR DOCTORES -->
     <main class="mainhome">
       <div class="formulario">
         <h1 class="formulario__titulo">
-          <img src="../IMG/historial.png" alt="Ícono de historial" class="formulario__icono">
-          Historial Médico
+          <img src="../IMG/doctor.png" alt="Ícono de doctor" class="formulario__icono">
+          Registrar Doctores
         </h1>
 
-        <form id="historialForm">
+        <form id="form-doctor">
           <div class="formulario__grid">
             <!-- Columna izquierda -->
             <div class="formulario__columna">
-              <label for="idPaciente" class="formulario__label">ID del Paciente</label>
-              <select id="idPaciente" name="idPaciente" class="formulario__select" required>
-                <option value="">---------</option>
-                <option value="1">Paciente 1</option>
-                <option value="2">Paciente 2</option>
+              <label for="codigo-doctor" class="formulario__label">Código del Doctor</label>
+              <input type="text" id="codigo-doctor" name="codigo_doctor" class="formulario__input" placeholder="Ejm: DOC-12345" required maxlength="16">
+
+              <label for="identificacion" class="formulario__label">Cédula de Identificación</label>
+              <input type="text" id="identificacion" name="identificacion" class="formulario__input" placeholder="Ejm: 401-291000-1008H" required maxlength="16">
+
+              <label for="1nombre-doctor" class="formulario__label">Primer Nombre</label>
+              <input type="text" id="1nombre-doctor" name="1nombre-doctor" class="formulario__input" placeholder="Primer Nombre del Doctor" required>
+
+              <label for="2nombre-doctor" class="formulario__label">Segundo Nombre</label>
+              <input type="text" id="2nombre-doctor" name="2nombre-doctor" class="formulario__input" placeholder="Segundo Nombre del Doctor">
+
+              <label for="apellidos-doctor" class="formulario__label">Apellidos</label>
+              <input type="text" id="apellidos-doctor" name="apellidos-doctor" class="formulario__input" placeholder="Apellidos del Doctor" required>
+
+              <label for="sexo" class="formulario__label">Sexo</label>
+              <select id="sexo" name="sexo" class="formulario__select" required>
+                <option value="">Seleccionar</option>
+                <option value="Femenino">Femenino</option>
+                <option value="Masculino">Masculino</option>
               </select>
-
-              <label for="codigo" class="formulario__label">Código Historial Médico</label>
-              <input type="text" id="codigo" name="codigo" class="formulario__input" required>
-              
-              <label for="diagnostico" class="formulario__label">Diagnóstico</label>
-              <textarea id="diagnostico" name="diagnostico" class="formulario__input" rows="3" required></textarea>
-
-              <label for="tratamiento" class="formulario__label">Tratamiento</label>
-              <textarea id="tratamiento" name="tratamiento" class="formulario__input" rows="3" required></textarea>
             </div>
 
             <!-- Columna derecha -->
             <div class="formulario__columna">
-              <label for="pronostico" class="formulario__label">Pronóstico</label>
-              <input type="text" id="pronostico" name="pronostico" class="formulario__input" required>
+              <label for="edad" class="formulario__label">Edad</label>
+              <input type="number"  id="edad" name="edad" class="formulario__input" required min="0" max="100" step="1">
 
-              <label for="fecha" class="formulario__label">Fecha</label>
-              <input type="date" id="fecha" name="fecha" class="formulario__input" required>
+              <label for="telefono" class="formulario__label">Teléfono</label>
+              <input type="text" id="telefono" name="telefono" class="formulario__input" placeholder="Teléfono" required>
 
-              <label for="peso" class="formulario__label">Peso en libras</label>
-              <input type="number" id="peso" name="peso" class="formulario__input" required>
+              <label for="correo" class="formulario__label">Correo Electrónico</label>
+              <input type="email" id="correo" name="correo" class="formulario__input" placeholder="ejemplo@correo.com" required>
 
-              <label for="medida" class="formulario__label">Medida</label>
-              <input type="text" id="medida" name="medida" class="formulario__input" required>
+              <label for="direccion" class="formulario__label">Dirección</label>
+              <input type="text" id="direccion" name="direccion" class="formulario__input" required>
+
+              <label for="dependencia" class="formulario__label">Dependencia</label>
+              <input type="text" id="dependencia" name="dependencia" class="formulario__input" required>
+
+              <label for="cargo_trabajo" class="formulario__label">Cargo</label>
+              <input type="text" id="cargo_trabajo" name="cargo_trabajo" class="formulario__input" required>
             </div>
           </div>
 
           <!-- Botones -->
           <div class="formulario__botones">
-            <button type="submit" class="formulario__boton formulario__boton--guardar">Guardar registro</button>
-            <a href="../paginas/historialmedico.html" class="formulario__boton formulario__boton--ver">Ver resultado</a>
+            <button type="submit" class="formulario__boton formulario__boton--guardar-doctor">Guardar registro</button>
+            <a href="../paginas/doctores.html" class="formulario__boton formulario__boton--ver-doctor">Ver resultado</a>
           </div>
         </form>
       </div>

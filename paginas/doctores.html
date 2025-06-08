@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Salud Virtual</title>
+  <title>Doctores Registrados</title>
   <link rel="icon" type="image/x-icon" href="../IMG/favicon.ico"/>
   <link rel="stylesheet" href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -53,57 +53,47 @@
                 </ul>
             </div>
         </nav>
-    <!-- FORMULARIO HISTORIAL MÉDICO -->
-    <main class="mainhome">
-      <div class="formulario">
-        <h1 class="formulario__titulo">
-          <img src="../IMG/historial.png" alt="Ícono de historial" class="formulario__icono">
-          Historial Médico
+    <!-- MAIN DOCTORES -->
+    <main>
+      <div class="tabla">
+        <h1 class="tabla__titulo">
+          <img src="../IMG/doctor.png" alt="icono doctores" class="tabla__icono">
+          Doctores Registrados
         </h1>
 
-        <form id="historialForm">
-          <div class="formulario__grid">
-            <!-- Columna izquierda -->
-            <div class="formulario__columna">
-              <label for="idPaciente" class="formulario__label">ID del Paciente</label>
-              <select id="idPaciente" name="idPaciente" class="formulario__select" required>
-                <option value="">---------</option>
-                <option value="1">Paciente 1</option>
-                <option value="2">Paciente 2</option>
-              </select>
+        <div class="tabla__acciones">
+          <input type="text" placeholder="Buscar doctor..." class="tabla__buscador" id="buscador-doctor">
+          <a href="../paginas/registrardoctores.html" class="tabla__boton tabla__boton--agregar">
+            <img src="../IMG/add.png" alt="Agregar doctor" class="tabla__icono-boton">
+          </a>
+          <button class="tabla__boton tabla__boton--buscar-doctor"><img src="../IMG/buscar.png" alt="Buscar doctor" class="tabla__icono-boton"></button>
+          <button class="tabla__boton tabla__boton--editar-doctor"><img src="../IMG/editar.png" alt="Editar doctor" class="tabla__icono-boton"></button>
+          <button class="tabla__boton tabla__boton--eliminar-doctor"><img src="../IMG/delete.png" alt="Eliminar doctor" class="tabla__icono-boton"></button>
+        </div>
 
-              <label for="codigo" class="formulario__label">Código Historial Médico</label>
-              <input type="text" id="codigo" name="codigo" class="formulario__input" required>
-              
-              <label for="diagnostico" class="formulario__label">Diagnóstico</label>
-              <textarea id="diagnostico" name="diagnostico" class="formulario__input" rows="3" required></textarea>
-
-              <label for="tratamiento" class="formulario__label">Tratamiento</label>
-              <textarea id="tratamiento" name="tratamiento" class="formulario__input" rows="3" required></textarea>
-            </div>
-
-            <!-- Columna derecha -->
-            <div class="formulario__columna">
-              <label for="pronostico" class="formulario__label">Pronóstico</label>
-              <input type="text" id="pronostico" name="pronostico" class="formulario__input" required>
-
-              <label for="fecha" class="formulario__label">Fecha</label>
-              <input type="date" id="fecha" name="fecha" class="formulario__input" required>
-
-              <label for="peso" class="formulario__label">Peso en libras</label>
-              <input type="number" id="peso" name="peso" class="formulario__input" required>
-
-              <label for="medida" class="formulario__label">Medida</label>
-              <input type="text" id="medida" name="medida" class="formulario__input" required>
-            </div>
-          </div>
-
-          <!-- Botones -->
-          <div class="formulario__botones">
-            <button type="submit" class="formulario__boton formulario__boton--guardar">Guardar registro</button>
-            <a href="../paginas/historialmedico.html" class="formulario__boton formulario__boton--ver">Ver resultado</a>
-          </div>
-        </form>
+        <div class="tabla__contenedor">
+          <table class="tabla__estructura" id="tablaDoctores">
+            <thead class="tabla__cabecera">
+              <tr class="tabla__fila-doctor">
+                <th class="tabla__encabezado">Código</th>
+                <th class="tabla__encabezado">Cédula</th>
+                <th class="tabla__encabezado">Primer Nombre</th>
+                <th class="tabla__encabezado">Segundo Nombre</th>
+                <th class="tabla__encabezado">Apellidos</th>
+                <th class="tabla__encabezado">Sexo</th>
+                <th class="tabla__encabezado">Edad</th>
+                <th class="tabla__encabezado">Teléfono</th>
+                <th class="tabla__encabezado">Correo</th>
+                <th class="tabla__encabezado">Dirección</th>
+                <th class="tabla__encabezado">Dependencia</th>
+                <th class="tabla__encabezado">Cargo</th>
+              </tr>
+            </thead>
+            <tbody class="tabla__cuerpo">
+              <!-- Datos dinámicos o estáticos -->
+            </tbody>
+          </table>
+        </div>
       </div>
     </main>
 

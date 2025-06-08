@@ -5,108 +5,144 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Salud Virtual</title>
   <link rel="icon" type="image/x-icon" href="../IMG/favicon.ico"/>
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="../CSS/style.css" />
 </head>
+<body class="con-menu">
+    <!-- MENU LATERAL -->
+    <section id="menuLateral" class="menuLateral">
+        <a href="../paginas/home.html" class="menuLateral__brand"> 
+            <img src="../IMG/logo.png" alt="Logo Salud Virtual" class="logo-icon">
+            SALUD VIRTUAL
+        </a>
+        <ul class="menuLateral__side-menu">
+            <li class="menuLateral__divisor" data-tex="PACIENTES"></li>  
+            <li><a href="../paginas/pacientes.html"><i class="fas fa-user-injured menuLateral__icon"></i>Pacientes</a></li>
+            <li><a href="../paginas/registrarpacientes.html" class="active"><i class="fas fa-user-plus menuLateral__icon"></i>Nuevo Paciente</a></li>
+            <li class="menuLateral__divisor" data-tex="TUTORES"></li>  
+            <li><a href="../paginas/tutores.html"><i class="fas fa-users menuLateral__icon"></i>Tutores</a></li>
+            <li><a href="../paginas/registrotutor.html"><i class="fas fa-user-plus menuLateral__icon"></i>Nuevo Tutor</a></li>
+            <li class="menuLateral__divisor" data-tex="CITAS MÉDICAS"></li>  
+            <li><a href="../paginas/citasmedicas.html"><i class="fas fa-calendar-alt menuLateral__icon"></i>Citas</a></li>
+            <li><a href="../paginas/agendarcitas.html"><i class="fas fa-calendar-plus menuLateral__icon"></i>Nueva Cita</a></li>
+            <li class="menuLateral__divisor" data-tex="DOCTORES"></li>  
+            <li><a href="../paginas/doctores.html"><i class="fas fa-user-md menuLateral__icon"></i>Doctores</a></li>
+            <li><a href="../paginas/registrardoctores.html"><i class="fas fa-plus-circle menuLateral__icon"></i>Nuevo Doctor</a></li>
+            <li class="menuLateral__divisor" data-tex="HISTORIAL"></li>  
+            <li><a href="../paginas/historialmedico.html"><i class="fas fa-notes-medical menuLateral__icon"></i>Historiales</a></li>
+            <li><a href="../paginas/agregarhistorial.html"><i class="fas fa-file-medical menuLateral__icon"></i>Nuevo Historial</a></li>
+            <li class="menuLateral__divisor" data-tex="REPORTES"></li>  
+            <li><a href="../paginas/Dasboard.html"><i class="fas fa-chart-line menuLateral__icon"></i>Dashboard</a></li>
+        </ul>
+    </section>
+    <!-- CONTENIDO PRINCIPAL -->
+    <section id="content" class="contenido">
+        <!-- MENU SUPERIOR -->
+        <nav>
+            <button id="menuToggle" class="nav__hamburger">
+                <i class='bx bx-menu'></i>
+            </button>
+            <span class="nav__divider"></span>
+            <div class="nav__profile">
+                <img src="../IMG/user.png" class="nav__profile-img" alt="Usuario">
+                <ul class="menuLateral__side-dropdown">
+                    <li><a href="#"><i class="bx bxs-user-circle nav__link-icon"></i>Mi Perfil</a></li>
+                    <li><a href="#"><i class="bx bxs-cog nav__link-icon"></i>Configuración</a></li>
+                    <li><a href="#"><i class="bx bxs-log-out-circle nav__link-icon"></i>Cerrar Sesión</a></li>
+                </ul>
+            </div>
+        </nav>
+        <!-- CONTENIDO PRINCIPAL -->
 
+    <!-- FORMULARIO -->
+    <main class="mainhome">
+      <div class="formulario">
+        <h1 class="formulario__titulo">
+          <img src="../IMG/pediatric.png" alt="icono de paciente" class="formulario__icono">
+          Registrar Paciente
+        </h1>
 
-<body>
-    <header class="header">
-  <!-- Botón toggle para mostrar/ocultar el menú -->
-  <input type="checkbox" id="header__toggle" class="header__checkbox" hidden />
-  <label for="header__toggle" class="header__toggle-button">☰</label>
+        <form id="form-paciente">
+          <div class="formulario__grid">
+            <!-- Columna izquierda -->
+            <div class="formulario__columna">
+              <label for="codigoPaciente" class="formulario__label">Código Paciente</label>
+              <input type="text" id="codigoPaciente" name="codigoPaciente" class="formulario__input" readonly>
 
-  <!-- Menú de navegación lateral -->
-  <nav class="header__menu">
-    <img src="../IMG/LOGO.png" alt="Logo Salud Virtual" class="header__logo" />
+              <label for="1nombre-paciente" class="formulario__label">Primer Nombre</label>
+              <input type="text" id="1nombre-paciente" name="1nombre-paciente" class="formulario__input" placeholder="Primer Nombre" required>
 
-    <a href="../index.html" class="header__link"><button class="header__button">Inicio</button></a>
-    <a href="../paginas/pacientes.html" class="header__link"><button class="header__button">Pacientes</button></a>
-    <a href="../paginas/tutores.html" class="header__link"><button class="header__button">Tutores</button></a>
-    <a href="../paginas/historialmedico.html" class="header__link"><button class="header__button">Historial Médico</button></a>
-    <a href="../paginas/registrotutor.html" class="header__link"><button class="header__button">Registrar Tutor</button></a>
-    <a href="../paginas/registrarpacientes.html" class="header__link"><button class="header__button">Registrar Paciente</button></a>
-    <a href="../paginas/agendarcitas.html" class="header__link"><button class="header__button">Agendar Cita Médica</button></a>
-    <a href="../paginas/agregarhistorial.html" class="header__link"><button class="header__button">Agregar Historial Médico</button></a>
-    <a href="../paginas/Dasboard.html" class="header__link"><button class="header__button">Dashboard</button></a>
-  </nav>
-</header>
-  
-    <main>
-<div class="formulario">
-  <h1 class="formulario__titulo">
-    <img src="../IMG/pediatric.png" alt="icono de paciente" class="formulario__icono">
-    Registrar Paciente
-  </h1>
-  <form id="form">
-    <div class="formulario__grid">
-      <div class="formulario__columna">
-        <label for="codigoPaciente" class="formulario__label">Código Paciente</label>
-        <input type="text" id="codigoPaciente" name="codigoPaciente" class="formulario__input" readonly>
+              <label for="2nombre-paciente" class="formulario__label">Segundo Nombre</label>
+              <input type="text" id="2nombre-paciente" name="2nombre-paciente" class="formulario__input" placeholder="Segundo Nombre">
 
-        <label for="1nombre-paciente" class="formulario__label">Primer Nombre</label>
-        <input type="text" id="1nombre-paciente" name="1nombre-paciente" class="formulario__input" placeholder="Primer Nombre" required>
+              <label for="apellidos-paciente" class="formulario__label">Apellidos</label>
+              <input type="text" id="apellidos-paciente" name="apellidos-paciente" class="formulario__input" placeholder="Apellidos" required>
 
-        <label for="2nombre-paciente" class="formulario__label">Segundo Nombre</label>
-        <input type="text" id="2nombre-paciente" name="2nombre-paciente" class="formulario__input" placeholder="Segundo Nombre">
+              <label for="alergias" class="formulario__label">Alergias</label>
+              <input type="text" id="alergias" name="alergias" class="formulario__input" placeholder="Si no tiene alergias, dejar vacío">
+            </div>
 
-        <label for="apellidos-paciente" class="formulario__label">Apellidos</label>
-        <input type="text" id="apellidos-paciente" name="apellidos-paciente" class="formulario__input" placeholder="Apellidos" required>
+            <!-- Columna derecha -->
+            <div class="formulario__columna">
+              <label for="fecha" class="formulario__label">Fecha de Nacimiento</label>
+              <input type="date" id="fecha" name="fecha" class="formulario__input" required>
+
+              <label for="sexo" class="formulario__label">Sexo</label>
+              <select id="sexo" name="sexo" class="formulario__select" required>
+                <option value="" disabled selected>Seleccione</option>
+                <option value="masculino">Masculino</option>
+                <option value="femenino">Femenino</option>
+              </select>
+
+              <label for="edad" class="formulario__label">Edad del Paciente</label>
+              <input type="number" id="edad" name="edad" class="formulario__input" required min="0" max="20" step="1">
+
+              <label for="mesesanios" class="formulario__label">Edad en</label>
+              <select id="mesesanios" name="unidadEdad" class="formulario__select" required>
+                <option value="" disabled selected>Seleccione</option>
+                <option value="meses">Meses</option>
+                <option value="anios">Años</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Botones -->
+          <div class="formulario__botones">
+            <button type="submit" class="formulario__boton formulario__boton--guardar-paciente">Guardar registro</button>
+            <a href="../paginas/pacientes.html" class="formulario__boton formulario__boton--ver-paciente">Ver resultado</a>
+          </div>
+        </form>
       </div>
+    </main>
 
-      <div class="formulario__columna">
-        <label for="fecha" class="formulario__label">Fecha de Nacimiento</label>
-        <input type="date" id="fecha" name="fecha" class="formulario__input" required>
-
-        <label for="edad" class="formulario__label">Edad</label>
-        <input type="text" id="edad" name="edad" class="formulario__input" required>
-
-        <label for="sexo" class="formulario__label">Sexo</label>
-        <select id="sexo" name="sexo" class="formulario__select" required>
-          <option value="" disabled selected>Seleccione</option>
-          <option value="masculino">Masculino</option>
-          <option value="femenino">Femenino</option>
-        </select>
-
-        <label for="alergias" class="formulario__label">Alergias</label>
-        <input type="text" id="alergias" name="alergias" class="formulario__input" placeholder="Si no tiene alergias, dejar vacío">
+  <!-- FOOTER -->
+  <footer class="footer-contacto">
+    <div class="footer-contacto__row">
+      <div class="footer-contacto__section footer-contacto__section--info">
+        <h3 class="footer-contacto__heading">Contactos del Hospital Pediátrico</h3>
+        <p class="footer-contacto__text">| <strong>Teléfono</strong>: +505 2426 4890</p>
+        <p class="footer-contacto__text">| <strong>E-mail</strong>: hospitalpediatricopequeñosheroes@emp.com</p>
+        <p class="footer-contacto__text">| <strong>Dirección</strong>: De la farmacia Santa Rita, 3C al este, Masaya, Reparto la Reforma.</p>
+      </div>
+      <div class="footer-contacto__section footer-contacto__section--logo">
+        <img src="../IMG/logo.png" alt="Logo Salud Virtual" class="footer-contacto__logo">
       </div>
     </div>
 
-    <div class="formulario__botones">
-      <button type="submit" class="formulario__boton">Registrar Paciente</button>
+    <div class="footer-contacto__divider"></div>
+
+    <div class="footer-contacto__social">
+      <a href="#"><img src="../IMG/Facebook.png" alt="Facebook" class="footer-contacto__social-icon"></a>
+      <a href="#"><img src="../IMG/whatsapp.png" alt="WhatsApp" class="footer-contacto__social-icon"></a>
+      <a href="#"><img src="../IMG/Instagram.png" alt="Instagram" class="footer-contacto__social-icon"></a>
     </div>
-  </form>
-</div>
 
-      
-      </main>
-      
-<footer class="footer-contacto">
-  <div class="footer-contacto__row">
-    <div class="footer-contacto__section footer-contacto__section--info">
-      <h3 class="footer-contacto__heading">Contactos del Hospital Pediátrico</h3>
-      <p class="footer-contacto__text">| <strong>Teléfono</strong>: +505 2426 4890</p>
-      <p class="footer-contacto__text">| <strong>E-mail</strong>: hospitalpediatricopequeñosheroes@emp.com</p>
-      <p class="footer-contacto__text">| <strong>Dirección</strong>: De la farmacia Santa Rita, 3C al este, Masaya, Reparto la Reforma.</p>
+    <div class="footer-contacto__bottom">
+      <p class="footer-contacto__copy">&copy; 2025 Hospital Pediátrico - Pequeños Héroes - Salud Virtual. Todos los derechos reservados.</p>
     </div>
-    <div class="footer-contacto__section footer-contacto__section--logo">
-      <img src="../IMG/SV.jpg" alt="Logo Salud Virtual" class="footer-contacto__logo">
-    </div>
-  </div>
+  </footer>
 
-  <div class="footer-contacto__divider"></div>
-
-  <div class="footer-contacto__social">
-    <a href="#"><img src="../IMG/Facebook.png" alt="Facebook" class="footer-contacto__social-icon"></a>
-    <a href="#"><img src="../IMG/whatsapp.png" alt="WhatsApp" class="footer-contacto__social-icon"></a>
-    <a href="#"><img src="../IMG/Instagram.png" alt="Instagram" class="footer-contacto__social-icon"></a>
-  </div>
-
-  <div class="footer-contacto__bottom">
-    <p class="footer-contacto__copy">&copy; 2025 Hospital Pediátrico - Pequeños Héroes - Salud Virtual. Todos los derechos reservados.</p>
-  </div>
-</footer>
-
-      <script src="../JS/scripts.js"></script>
-    </body>
+  <script src="../JS/menu.js" defer></script>
+</body>
 </html>

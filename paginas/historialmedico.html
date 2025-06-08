@@ -5,90 +5,133 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Salud Virtual</title>
   <link rel="icon" type="image/x-icon" href="../IMG/favicon.ico"/>
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="../CSS/style.css" />
 </head>
+<body class="con-menu">
+    <!-- MENU LATERAL -->
+    <section id="menuLateral" class="menuLateral">
+        <a href="../paginas/home.html" class="menuLateral__brand"> 
+            <img src="../IMG/logo.png" alt="Logo Salud Virtual" class="logo-icon">
+            SALUD VIRTUAL
+        </a>
+        <ul class="menuLateral__side-menu">
+            <li class="menuLateral__divisor" data-tex="PACIENTES"></li>  
+            <li><a href="../paginas/pacientes.html"><i class="fas fa-user-injured menuLateral__icon"></i>Pacientes</a></li>
+            <li><a href="../paginas/registrarpacientes.html" class="active"><i class="fas fa-user-plus menuLateral__icon"></i>Nuevo Paciente</a></li>
+            <li class="menuLateral__divisor" data-tex="TUTORES"></li>  
+            <li><a href="../paginas/tutores.html"><i class="fas fa-users menuLateral__icon"></i>Tutores</a></li>
+            <li><a href="../paginas/registrotutor.html"><i class="fas fa-user-plus menuLateral__icon"></i>Nuevo Tutor</a></li>
+            <li class="menuLateral__divisor" data-tex="CITAS MÉDICAS"></li>  
+            <li><a href="../paginas/citasmedicas.html"><i class="fas fa-calendar-alt menuLateral__icon"></i>Citas</a></li>
+            <li><a href="../paginas/agendarcitas.html"><i class="fas fa-calendar-plus menuLateral__icon"></i>Nueva Cita</a></li>
+            <li class="menuLateral__divisor" data-tex="DOCTORES"></li>  
+            <li><a href="../paginas/doctores.html"><i class="fas fa-user-md menuLateral__icon"></i>Doctores</a></li>
+            <li><a href="../paginas/registrardoctores.html"><i class="fas fa-plus-circle menuLateral__icon"></i>Nuevo Doctor</a></li>
+            <li class="menuLateral__divisor" data-tex="HISTORIAL"></li>  
+            <li><a href="../paginas/historialmedico.html"><i class="fas fa-notes-medical menuLateral__icon"></i>Historiales</a></li>
+            <li><a href="../paginas/agregarhistorial.html"><i class="fas fa-file-medical menuLateral__icon"></i>Nuevo Historial</a></li>
+            <li class="menuLateral__divisor" data-tex="REPORTES"></li>  
+            <li><a href="../paginas/Dasboard.html"><i class="fas fa-chart-line menuLateral__icon"></i>Dashboard</a></li>
+        </ul>
+    </section>
+    <!-- CONTENIDO PRINCIPAL -->
+    <section id="content" class="contenido">
+        <!-- MENU SUPERIOR -->
+        <nav>
+            <button id="menuToggle" class="nav__hamburger">
+                <i class='bx bx-menu'></i>
+            </button>
+            <span class="nav__divider"></span>
+            <div class="nav__profile">
+                <img src="../IMG/user.png" class="nav__profile-img" alt="Usuario">
+                <ul class="menuLateral__side-dropdown">
+                    <li><a href="#"><i class="bx bxs-user-circle nav__link-icon"></i>Mi Perfil</a></li>
+                    <li><a href="#"><i class="bx bxs-cog nav__link-icon"></i>Configuración</a></li>
+                    <li><a href="#"><i class="bx bxs-log-out-circle nav__link-icon"></i>Cerrar Sesión</a></li>
+                </ul>
+            </div>
+        </nav>
+        <!-- CONTENIDO PRINCIPAL -->
+    <!-- MAIN DE HISTORIAL MÉDICO -->
+    <main>
+      <div class="tabla">
+        <h1 class="tabla__titulo">
+          <img src="../IMG/sesion.png" alt="icono historial" class="tabla__icono">
+          Historial Médico Registrado
+        </h1>
 
+        <div class="tabla__acciones">
+          <input type="text" placeholder="Buscar historial..." class="tabla__buscador" id="buscarDoctor">
 
-<body>
-    
-  <header class="header">
-  <!-- Botón toggle para mostrar/ocultar el menú -->
-  <input type="checkbox" id="header__toggle" class="header__checkbox" hidden />
-  <label for="header__toggle" class="header__toggle-button">☰</label>
+          <a href="../paginas/agregarhistorial.html" class="tabla__boton tabla__boton--agregar">
+            <img src="../IMG/add.png" alt="icono historial" class="tabla__icono-boton">
+          </a>
+          <button class="tabla__boton tabla__boton--buscar"><img src="../IMG/buscar.png" alt="icono buscar" class="tabla__icono-boton"></button>
+          <button class="tabla__boton tabla__boton--editar"><img src="../IMG/editar.png" alt="icono editar" class="tabla__icono-boton"></button>
+          <button class="tabla__boton tabla__boton--eliminar"><img src="../IMG/delete.png" alt="icono eliminar" class="tabla__icono-boton"></button>
+        </div>
 
-  <!-- Menú de navegación lateral -->
-  <nav class="header__menu">
-    <img src="../IMG/LOGO.png" alt="Logo Salud Virtual" class="header__logo" />
+        <div class="tabla__contenedor">
+          <table class="tabla__estructura" id="tablaHistorial">
+            <thead class="tabla__cabecera">
+              <tr class="tabla__fila">
+                <th class="tabla__encabezado">ID Paciente</th>
+                <th class="tabla__encabezado">Código</th>
+                <th class="tabla__encabezado">Diagnóstico</th>
+                <th class="tabla__encabezado">Tratamiento</th>
+                <th class="tabla__encabezado">Pronóstico</th>
+                <th class="tabla__encabezado">Fecha</th>
+                <th class="tabla__encabezado">Peso (lbs)</th>
+                <th class="tabla__encabezado">Medida</th>
+              </tr> 
+            </thead>
+            <tbody class="tabla__cuerpo">
+              <tr class="tabla__fila">
+                <td class="tabla__celda">PAC-001</td>
+                <td class="tabla__celda">HIS-001</td>
+                <td class="tabla__celda">Gripe común</td>
+                <td class="tabla__celda">Paracetamol</td>
+                <td class="tabla__celda">Bueno</td>
+                <td class="tabla__celda">2024-09-15</td>
+                <td class="tabla__celda">68</td>
+                <td class="tabla__celda">1.35 m</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
 
-    <a href="../index.html" class="header__link"><button class="header__button">Inicio</button></a>
-    <a href="../paginas/pacientes.html" class="header__link"><button class="header__button">Pacientes</button></a>
-    <a href="../paginas/tutores.html" class="header__link"><button class="header__button">Tutores</button></a>
-    <a href="../paginas/historialmedico.html" class="header__link"><button class="header__button">Historial Médico</button></a>
-    <a href="../paginas/registrotutor.html" class="header__link"><button class="header__button">Registrar Tutor</button></a>
-    <a href="../paginas/registrarpacientes.html" class="header__link"><button class="header__button">Registrar Paciente</button></a>
-    <a href="../paginas/agendarcitas.html" class="header__link"><button class="header__button">Agendar Cita Médica</button></a>
-    <a href="../paginas/agregarhistorial.html" class="header__link"><button class="header__button">Agregar Historial Médico</button></a>
-    <a href="../paginas/Dasboard.html" class="header__link"><button class="header__button">Dashboard</button></a>
-  </nav>
-</header>
-  
-<main>
+    <!-- FOOTER -->
+    <footer class="footer-contacto">
+      <div class="footer-contacto__row">
+        <div class="footer-contacto__section footer-contacto__section--info">
+          <h3 class="footer-contacto__heading">Contactos del Hospital Pediátrico</h3>
+          <p class="footer-contacto__text">| <strong>Teléfono</strong>: +505 2426 4890</p>
+          <p class="footer-contacto__text">| <strong>E-mail</strong>: hospitalpediatricopequeñosheroes@emp.com</p>
+          <p class="footer-contacto__text">| <strong>Dirección</strong>: De la farmacia Santa Rita, 3C al este, Masaya, Reparto la Reforma.</p>
+        </div>
+        <div class="footer-contacto__section footer-contacto__section--logo">
+          <img src="../IMG/logo.png" alt="Logo Salud Virtual" class="footer-contacto__logo">
+        </div>
+      </div>
 
-  <div class="tabla">
-  <h1 class="tabla__titulo">
-    <img src="../IMG/sesion.png" alt="icono historial" class="tabla__icono">
-    Historial Médico Registrado
-  </h1>
+      <div class="footer-contacto__divider"></div>
 
-  <table class="tabla__estructura" id="tablaHistorial">
-    <thead class="tabla__cabecera">
-      <tr class="tabla__fila">
-        <th class="tabla__encabezado">ID Paciente</th>
-        <th class="tabla__encabezado">Código</th>
-        <th class="tabla__encabezado">Diagnóstico</th>
-        <th class="tabla__encabezado">Tratamiento</th>
-        <th class="tabla__encabezado">Pronóstico</th>
-        <th class="tabla__encabezado">Fecha</th>
-        <th class="tabla__encabezado">Peso (lbs)</th>
-        <th class="tabla__encabezado">Medida</th>
-        <th class="tabla__encabezado">Editar</th>
+      <div class="footer-contacto__social">
+        <a href="#"><img src="../IMG/Facebook.png" alt="Facebook" class="footer-contacto__social-icon"></a>
+        <a href="#"><img src="../IMG/whatsapp.png" alt="WhatsApp" class="footer-contacto__social-icon"></a>
+        <a href="#"><img src="../IMG/Instagram.png" alt="Instagram" class="footer-contacto__social-icon"></a>
+      </div>
 
-      </tr>
-    </thead>
-    <tbody class="tabla__cuerpo">
-      <!-- Filas serán insertadas aquí por JavaScript -->
-    </tbody>
-  </table>
-</div>
+      <div class="footer-contacto__bottom">
+        <p class="footer-contacto__copy">&copy; 2025 Hospital Pediátrico - Pequeños Héroes - Salud Virtual. Todos los derechos reservados.</p>
+      </div>
+    </footer>
+  </section>
 
-  
-</main>
-
-<footer class="footer-contacto">
-  <div class="footer-contacto__row">
-    <div class="footer-contacto__section footer-contacto__section--info">
-      <h3 class="footer-contacto__heading">Contactos del Hospital Pediátrico</h3>
-      <p class="footer-contacto__text">| <strong>Teléfono</strong>: +505 2426 4890</p>
-      <p class="footer-contacto__text">| <strong>E-mail</strong>: hospitalpediatricopequeñosheroes@emp.com</p>
-      <p class="footer-contacto__text">| <strong>Dirección</strong>: De la farmacia Santa Rita, 3C al este, Masaya, Reparto la Reforma.</p>
-    </div>
-    <div class="footer-contacto__section footer-contacto__section--logo">
-      <img src="../IMG/SV.jpg" alt="Logo Salud Virtual" class="footer-contacto__logo">
-    </div>
-  </div>
-
-  <div class="footer-contacto__divider"></div>
-
-  <div class="footer-contacto__social">
-    <a href="#"><img src="../IMG/Facebook.png" alt="Facebook" class="footer-contacto__social-icon"></a>
-    <a href="#"><img src="../IMG/whatsapp.png" alt="WhatsApp" class="footer-contacto__social-icon"></a>
-    <a href="#"><img src="../IMG/Instagram.png" alt="Instagram" class="footer-contacto__social-icon"></a>
-  </div>
-
-  <div class="footer-contacto__bottom">
-    <p class="footer-contacto__copy">&copy; 2025 Hospital Pediátrico - Pequeños Héroes - Salud Virtual. Todos los derechos reservados.</p>
-  </div>
-</footer>
-
+  <script src="../JS/menu.js" defer></script>
 </body>
 </html>
